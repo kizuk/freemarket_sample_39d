@@ -1,24 +1,140 @@
-# README
+## users table
+|column|Type|Options|
+|------|----|-------|
+|nickname|string|null: false|
+|phone_num|integer|null: false,unique: true|
+|family_name|string|null: false|
+|first_name|string|null: false|
+|family_name_kana|string|null: false|
+|first_name_kana|string|null: false|
+|introduction|text|---|
+|icon|string|------|
+|birth_day|string|--|
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Association
+- has_many :credit_cards, dependent: :destroy
+- has_many :items, dependent: :destroy
+- has_many :likes, dependent: :destroy
+- has_many :comments, dependent: :destroy
+- has_one :address, dependent: :destroy
 
-Things you may want to cover:
+## addresses table
+|column|Type|Options|
+|------|----|-------|
+|zipcode|integer|null: false|
+|prefecture|integer|null: false, default: 0, limit: 1|
+|city|string|null: false|
+|adress|integer|null: false|
+|building|string|---|
+|user_id|references|foreign_key: true, null: false|
 
-* Ruby version
+### Association
+- belongs_to :user
 
-* System dependencies
 
-* Configuration
 
-* Database creation
+## credit_cards table
+|column|Type|Options|
+|------|----|-------|
+|number|integer|null: false,unique: true|
+|expire|integer|null: false|
+|security|integer|null: false|
 
-* Database initialization
+### Association
+- belongs_to :user
 
-* How to run the test suite
+## items table
+|column|Type|Options|
+|------|----|-------|
+|name|string|null: false,add_index|
+|explain|text|null: false|
+|category_l_id|references|null: false,add_index,foreign_key: true|
+|category_m_id|references|null: false, add_index?,foreign_key: true|
+|category_s_id|references|null: false,add_index,foreign_key: true|
+|size|stirng|-----|
+|condition|string|null: false|
+|brand_id|references|foreign_key: true|
+|shipping_cost|string|null: false|
+|area|string|null: false|
+|shipping_date|string|null: false|
+|price|integer|null: false|
+|status|string|null: false|
 
-* Services (job queues, cache servers, search engines, etc.)
+### Association
+- has_many :comments, dependent: :destroy
+- has_many :likes, dependent: :destroy
+- has_many :images, dependent: :destroy
+- has_one :category_l, dependent: :destroy
+- has_one :category_m, dependent: :destroy
+- has_one :category_s, dependent: :destroy
+- has_one :brand, dependent: :destroy
+- belongs_to :user
 
-* Deployment instructions
+## images table
+|column|Type|Options|
+|------|----|-------|
+|image_url|string|null: false|
+|item_id|references|null: false,foreign_key: true|
 
-* ...
+### Association
+- belongs_to :item
+
+## categories_l table
+|column|Type|Options|
+|------|----|-------|
+|genre|string|----|
+
+### Association
+- has_many :categories_m
+- belongs_to :items
+
+## categories_m table
+|column|Type|Options|
+|------|----|-------|
+|genre|string|----|
+|category_l_id|reference|null: false, foreign_key: true|
+
+### Association
+- has_many :categories_s
+- belongs_to :item
+- belongs_to :category_l
+
+## categories_s table
+|column|Type|Options|
+|------|----|-------|
+|genre|string|----|
+|category_m_id|reference|null: false, foreign_key: true|
+
+### Association
+- belongs_to :item
+- belongs_to :category_m
+
+
+## brands table
+|column|Type|Options|
+|------|----|-------|
+|brand_name|string|unique: true,add_index|
+
+### Association
+- has_many :items
+
+## comments table
+|column|Type|Options|
+|------|----|-------|
+|comment|text|null: false|
+|user_id|integer|null: false, foreign_key: true|
+|item_id|integer|null: false, foreign_key: true|
+
+### Association
+- belongs_to :user
+- belongs_to :item
+
+## likes table
+|column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|item_id|integer|null: false, foreign_key: true|
+
+### Association
+- belongs_to :user
+- belongs_to :item
