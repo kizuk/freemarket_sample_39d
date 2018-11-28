@@ -7,11 +7,6 @@
 |first_name|string|null: false|
 |family_name_kana|string|null: false|
 |first_name_kana|string|null: false|
-|zipcode|integer|null: false|
-|prefecture|string|null: false|
-|city|string|null: false|
-|adress|integer|null: false|
-|building|string|---|
 |introduction|text|---|
 |icon|string|------|
 |birth_day|string|--|
@@ -21,6 +16,22 @@
 - has_many :items, dependent: :destroy
 - has_many :likes, dependent: :destroy
 - has_many :comments, dependent: :destroy
+- has_one :address, dependent: :destroy
+
+## addresses table
+|column|Type|Options|
+|------|----|-------|
+|zipcode|integer|null: false|
+|prefecture|integer|null: false, default: 0, limit: 1|
+|city|string|null: false|
+|adress|integer|null: false|
+|building|string|---|
+|user_id|references|foreign_key: true, null: false|
+
+### Association
+- belongs_to :user
+
+
 
 ## credit_cards table
 |column|Type|Options|
@@ -53,9 +64,9 @@
 - has_many :comments, dependent: :destroy
 - has_many :likes, dependent: :destroy
 - has_many :images, dependent: :destroy
-- has_one :category_l
-- has_one :category_m
-- has_one :category_s
+- has_one :category_l, dependent: :destroy
+- has_one :category_m, dependent: :destroy
+- has_one :category_s, dependent: :destroy
 - has_one :brand, dependent: :destroy
 - belongs_to :user
 
