@@ -7,6 +7,7 @@
       %form.pc-header-form.l-right{action: "https://www.mercari.com/jp/search/"}
         %input.input-default{name: "keyword", placeholder: "キーワードから探す", type: "search", value: ""}/
         %i.icon-search
+          =fa_icon'search', class: "search_icon"
     .pc-header__nav-box.clearfix
       %nav.l-left
         %ul.pc-header-nav
@@ -25,9 +26,11 @@
             %span.mypage マイページ
 
           %li.notice
+            %i.far.fa-bell
             %span.notice__item お知らせ
 
           %li.todo
+            =fa_icon 'check', class: "check_icon"
             %span やることリスト
 
 
