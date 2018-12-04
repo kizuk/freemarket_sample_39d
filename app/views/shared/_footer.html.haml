@@ -81,10 +81,12 @@
             %a.active{href: "https://www.mercari.com/jp/", class: "contents-list-link"}
               %img{alt: "", src: "//www-mercari-jp.akamaized.net/assets/img/common/common/flag_jp.png?1076135930", width: "22"}>/
               日本
-  %a.footer-logo{href: "https://www.mercari.com/jp/"}
-    %img{alt: "mercari", height: "33", src: "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-white.svg?1076135930", width: "124"}/
-  %p.footer-copyright
-    %small © 2018 Mercari
+  .footer-bottom-box
+    %a.footer-logo{href: "https://www.mercari.com/jp/"}
+      %img{alt: "mercari", height: "33", src: "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-white.svg?1076135930", width: "124", class: "footer-logo-icon"}/
+    %p.footer-copyright
+      %small © 2018 Mercari
 %a.footer-sell-btn{href: "https://www.mercari.com/jp/sell/"}
   %div.sell-icon 出品
   %i.icon-camera
+    =fa_icon 'camera', class: "camera_icon"
