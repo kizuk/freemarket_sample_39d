@@ -1,0 +1,91 @@
+.global-footer {
+  width: 100%;
+  height: 497px;
+  padding: 60px;
+  background-color: #212121;
+  text-align: center;
+}
+
+.global-footer-inner {
+  width: 1020px;
+  height: 402px;
+  margin: 0 auto;
+  text-align: center;
+  color: #fff;
+  position: relative;
+}
+
+.global-footer-inner-box {
+  text-align: center;
+}
+
+.footer-cell {
+  display: inline-block;
+  width: 23%;
+  margin: 0 2% 0 0;
+  vertical-align: top;
+  padding: 0;
+  float: left;
+}
+
+.footer-head {
+  color: #fff;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.first-child {
+  margin: 24px 0 0;
+}
+
+.contents-list {
+  margin: 16px 0 0;
+  display: list-style;
+  line-height: 1;
+}
+
+.contents-list-link {
+  font-size: 14px;
+  display: block;
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-logo {
+  display: block;
+  text-align: center;
+  font-size: 33px;
+}
+
+.footer-copyright {
+  text-align: center;
+  color: #fff;
+  font-size: 14px;
+}
+
+.footer-sell-btn {
+  width: 160px;
+  height: 160px;
+  z-index: 1000;
+  background-color: #ea352d;
+  color: #fff;
+  text-align: center;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  font-size: 22px;
+  text-decoration: none;
+}
+
+.sell-icon {
+  padding: 32px 0 0;
+}
+
+.icon-camera {
+  font-size: 54px;
+  margin: 8px 0 0;
+  display: inline-block;
+  font-family: icon-font;
+}
+
