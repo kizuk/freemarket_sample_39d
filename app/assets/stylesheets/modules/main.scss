@@ -40,7 +40,21 @@ html, body {
 }
 
 .owl-dots {
-
+  text-align: center;
+  opacity: 1;
+  position: absolute;
+  bottom: 10px;
+  left: 600px;
+  margin: 0 auto;
+}
+.owl-dot {
+  background-color: #fff;
+  border-radius: 50%;
+  height: 12px;
+  width: 12px;
+  margin-right: 15px;
+  display: inline-block;
+  float: left;
 }
 
 .pickup-container {
