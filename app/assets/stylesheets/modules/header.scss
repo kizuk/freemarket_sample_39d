@@ -1,0 +1,160 @@
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+.default-container {
+  width: 1200px;
+  height: 5339px;
+}
+
+.pc-header.visible-pc {
+  height: 90px;
+  position: relative;
+  z-index: 1001;
+  background-color: #fff;
+}
+
+.pc-header__inner {
+   width: 1020px;
+   margin: 0 auto;
+   padding: 8px 0 0;
+   background-color: #fff;
+
+  &__clearfix {
+    @include clearfix();
+    width: 1020px;
+    height: 36px;
+  }
+}
+
+h1.l-left {
+  width: 134px;
+  float: left;
+}
+.pc-header-form.l-right {
+  position: relative;
+  width: calc(100% - ( 134px + 16px ));
+  background-color: #fff;
+  float: right;
+  font-size: 14px;
+  line-height: 1;
+  }
+.input-default {
+  width: 100%;
+  height: 36px;
+  padding: 9px 32px 9px 8px;
+  background-color: #fafafa;
+  border-radius: 4px;
+  border: 1px, solid #ccc;
+  line-height: 1.5;
+  font-size: 16px;
+}
+.icon-search {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 36px;
+  line-height: 36px;
+  cursor: pointer;
+  text-align: center;
+  display: inline-block;
+  font-family: icon-font;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.pc-header__nav-box {
+  @include clearfix();
+  width: 1020px;
+  margin: 8px 0 0;
+  padding: 0;
+  font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+  font-size: 14px;
+  line-height: 1;
+}
+
+nav.l-left{
+  float: left;
+}
+.pc-header-nav {
+  margin: 0;
+  padding:0;
+}
+li:fisrt-child {
+  padding: 0;
+}
+li {
+  position: relative;
+  display: inline-block;
+  padding: 0 0 0 16px;
+}
+.pc-header-nav-root{
+  display: block;
+  text-decoration: none;
+  position: relative;
+  height: 38px;
+  line-height: 32px;
+}
+
+.l-right-mypage{
+  display: block;
+  width: 365.75px;
+  height: 38px;
+  font-size: 14px;
+  color: #333;
+  line-height: 1;
+  float: right;
+}
+.pc-header-user-nav{
+  width: 366px;
+  display: block;
+  float: right;
+}
+
+.mypage-link {
+  position: relative;
+  display: inline-block;
+  width: 113px;
+  padding: 0 0 0 16px;
+  float: left;
+}
+
+.user-icon {
+  display: inline-block;
+  position: relative;
+  font-size: 14px;
+  width: 32px;
+  float: left;
+  margin: 0 auto;
+  vertical-align: middle;
+}
+
+.user-icon-picture{
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.mypage {
+  text-decoration: none;
+  position: inline-block;
+  line-height: 34px;
+  float: left;
+}
+.notice {
+  display: inline-block;
+  width: 78px;
+  float: left;
+  line-height: 34px;
+}
+.todo {
+  display: inline-block;
+  text-decoration: none;
+  width: 127px;
+  line-height: 34px;
+  float: left;
+}
+
+
+
