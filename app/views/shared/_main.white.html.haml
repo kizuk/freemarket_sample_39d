@@ -1,14 +1,15 @@
-%main.white{:role => "main"}
+%main.white{role: "main"}
   %section.owl-carousel.top-carousel.owl-loaded.owl-drag
     .owl-stage-outer
-      .owl-stage{:style => "left: -4796px; width: 8393px;"}
-        .owl-item.cloned{:style => "width: 1199px;"}
-        .owl-item.cloned{:style => "width: 1199px;"}
-        .owl-item{:style => "width: 1199px;"}
-        .owl-item{:style => "width: 1199px;"}
-        .owl-item.active{:style => "width: 1199px;"}
-        .owl-item.cloned{:style => "width: 1199px;"}
-        .owl-item.cloned{:style => "width: 1199px;"}
+      .owl-stage{style: "left: -4796px; width: 8393px;"}
+        .owl-item.cloned{style: "width: 1199px;"}
+        .owl-item.cloned{style: "width: 1199px;"}
+        .owl-item.active{style: "width: 1199px;"}
+        %a{href: "https://mercari-special.jp/", class: "top-banner banner-kusanagi-san"}
+        .owl-item{style: "width: 1199px;"}
+        .owl-item{style: "width: 1199px;"}
+        .owl-item.cloned{style: "width: 1199px;"}
+        .owl-item.cloned{style:"width: 1199px;"}
     .owl-nav
       .owl-prev prev
       .owl-next next
@@ -20,38 +21,86 @@
     %h2.pickup-head ピックアップカテゴリー
     %section.items-box-container.clearfix
       %h3.text-center
-        %a{:href => "/jp/category/1/"}
+        %a{href: "/jp/category/1/", class: "category-link"}
           レディース 新着アイテム
       .items-box-content.clearfix
         %section.items-box
-          %a{:href => "https://item.mercari.com/jp/m96728472898/"}
+          %a{href: "https://item.mercari.com/jp/m96728472898/"}
             %figure.items-box-photo
-              %img.is-higher-width.lazyloaded{:alt => "イヤリング", "data-src" => "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m96728472898_1.jpg?1543214866", :src => "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m96728472898_1.jpg?1543214866"}/
+              .image-box
+                %img.is-higher-width.lazyloaded{alt: "イヤリング", "data-src" => "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m96728472898_1.jpg?1543214866", src: "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m96728472898_1.jpg?1543214866"}/
             .items-box-body
               %h3.items-box-name.font-2 イヤリング
               .items-box-num.clearfix
                 .items-box-price.font-5 ¥ 1,300
+                .items-box-likes
+                  %i.icon-like-border
+                  %span 6
+              %p.item-box-tax (税込)
+
+        %section.items-box
+          %a{href: "https://item.mercari.com/jp/m96728472898/"}
+            %figure.items-box-photo
+              .image-box
+                %img.is-higher-width.lazyloaded{alt: "イヤリング", "data-src" => "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m96728472898_1.jpg?1543214866", src: "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m96728472898_1.jpg?1543214866"}/
+            .items-box-body
+              %h3.items-box-name.font-2 イヤリング
+              .items-box-num.clearfix
+                .items-box-price.font-5 ¥ 1,300
+                .items-box-likes
+                  %i.icon-like-border
+                  %span 6
+              %p.item-box-tax (税込)
+
+        %section.items-box
+          %a{href: "https://item.mercari.com/jp/m96728472898/"}
+            %figure.items-box-photo
+              .image-box
+                %img.is-higher-width.lazyloaded{alt: "イヤリング", "data-src" => "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m96728472898_1.jpg?1543214866", src: "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m96728472898_1.jpg?1543214866"}/
+            .items-box-body
+              %h3.items-box-name.font-2 イヤリング
+              .items-box-num.clearfix
+                .items-box-price.font-5 ¥ 1,300
+                .items-box-likes
+                  %i.icon-like-border
+                  %span 6
+              %p.item-box-tax (税込)
+
+        %section.items-box
+          %a{href: "https://item.mercari.com/jp/m96728472898/"}
+            %figure.items-box-photo
+              .image-box
+                %img.is-higher-width.lazyloaded{alt: "イヤリング", "data-src" => "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m96728472898_1.jpg?1543214866", src: "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m96728472898_1.jpg?1543214866"}/
+            .items-box-body
+              %h3.items-box-name.font-2 イヤリング
+              .items-box-num.clearfix
+                .items-box-price.font-5 ¥ 1,300
+                .items-box-likes
+                  %i.icon-like-border
+                  %span 6
+              %p.item-box-tax (税込)
+
+      .view-all
+        %a{href: "/jp/category/1/", class: "link-to-all-items"} すべての商品を見る
+
+  %section.pickup-container
+    %h2.pickup-head ピックアップブランド
+    %section.items-box-container.clearfix
+      %h3.text-center
+        %a{href: "/jp/brand/658/", class: "category-link"}
+          シャネル 新着アイテム
+      .items-box-content.clearfix
+        %section.items-box
+          %a{href: "https://item.mercari.com/jp/m75617262989/"}
+            %figure.items-box-photo
+              %img.is-higher-height.lazyloaded{alt: "CHANEL チェーンベルト", "data-src" => "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m75617262989_1.jpg?1537140248", src: "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m75617262989_1.jpg?1537140248"}/
+            .items-box-body
+              %h3.items-box-name.font-2 CHANEL チェーンベルト
+              .items-box-num.clearfix
+                .items-box-price.font-5 ¥ 17,300
+                .items-box-likes.font-2
+                  %i.icon-like-border
+                  %span 18
                 %p.item-box-tax (税込)
       .view-all
-        %a{:href => "/jp/category/1/"} すべての商品を見る
-    %section.pickup-container
-      %h2.pickup-head ピックアップブランド
-      %section.items-box-container.clearfix
-        %h3.text-center
-          %a{:href => "/jp/brand/658/"}
-            シャネル 新着アイテム
-        .items-box-content.clearfix
-          %section.items-box
-            %a{:href => "https://item.mercari.com/jp/m75617262989/"}
-              %figure.items-box-photo
-                %img.is-higher-height.lazyloaded{:alt => "CHANEL チェーンベルト", "data-src" => "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m75617262989_1.jpg?1537140248", :src => "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m75617262989_1.jpg?1537140248"}/
-              .items-box-body
-                %h3.items-box-name.font-2 CHANEL チェーンベルト
-                .items-box-num.clearfix
-                  .items-box-price.font-5 ¥ 17,300
-                  .items-box-likes.font-2
-                    %i.icon-like-border
-                    %span 18
-                  %p.item-box-tax (税込)
-        .view-all
-          %a{:href => "/jp/brand/658/"} すべての商品を見る
+        %a{href: "/jp/brand/658/"} すべての商品を見る
