@@ -1,3 +1,10 @@
+// 全称セレクタ
+* {
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+}
+
 header {
   height: 128px;
   background-color: skyblue;
@@ -22,15 +29,6 @@ div {
 ul, ol {
     list-style: none;
 }
-* {
-    background-repeat: no-repeat;
-    margin: 0;
-    padding: 0;
-}
-
-.bold {
-    font-weight: 600;
-}
 h2 {
     font-size: 22px;
     line-height: 1.4;
@@ -44,11 +42,20 @@ h3 {
     margin-inline-end: 0px;
     font-weight: bold;
 }
-
+.bold {
+    font-weight: 600;
+}
 .soto {
   background-color: lightgrey;
   height: 2038px;
 }
+
+.clearfix:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
 .buy-item-container {
   height: 2038px;
   width: 700px;
@@ -58,15 +65,6 @@ h3 {
   border-width: 0;
   font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
 }
-
-.clearfix:after {
-    content: '';
-    display: block;
-    clear: both;
-}
-
-
-
 
 .form-require {
   background: #ea352d;
@@ -78,18 +76,32 @@ h3 {
   vertical-align: top;
 }
 
-
-.form-group label {
-    font-weight: 600;
+/*全体のマージン*/
+.form-group {
+  margin: 40px 0 0;
+  padding: 0;
 }
 .form-group .input-default {
-    width: 90%;
+    margin: 8px 0 0;
+    width: 100%;
     margin: 8px 0 0;
     box-sizing: border-box;
 }
-
-
-
+.form-group:first-child {
+    margin: 0;
+}
+.form-group .select-wrap {
+    margin: 8px 0 0;
+}
+.form-group label {
+    font-weight: 600;
+}
+.form-group label+.textarea-default {
+    margin: 8px 0 0;
+}
+.form-group select {
+     width: 100%;
+}
 
 .sell-price .form-group .l-right {
     width: 50%;
@@ -97,14 +109,12 @@ h3 {
 .l-right {
     float: right;
 }
-
 .l-single-head {
   padding: 32px 16px;
   font-size: 22px;
   line-height: 1.5;
   text-align: center;
 }
-
 .sell-price .form-group .l-left {
     width: 50%;
     line-height: 48px;
@@ -119,21 +129,18 @@ h3 {
     line-height: 1.5;
 }
 
-
 /*出品画像*/
 .sell-upload-box {
     width: 620px;
     padding: 40px;
     border-top: 1px solid #f5f5f5;
 }
-
 /*ドラッグ&ドロップ*/
 .sell-dropbox-container {
     display: block;
     width: 620px;
     margin-top: 10px;
 }
-
 .sell-upload-drop-box {
   float: none;
   margin: 0;
@@ -196,25 +203,6 @@ h3 {
     cursor: pointer;
 }
 
-/*全体のマージン*/
-.form-group {
-  margin: 40px 0 0;
-  padding: 0;
-}
-.form-group .input-default {
-/*    width: 80%;*/
-    margin: 8px 0 0;
-
-}
-.form-group:first-child {
-    margin: 0;
-}
-
-
-.form-group .select-wrap {
-    margin: 8px 0 0;
-}
-
 .input-default {
   width: 100%;
   margin: 8px;
@@ -235,10 +223,6 @@ h3 {
   font-family: inherit;
   -webkit-appearance: none;
   -moz-appearance: none;
-}
-
-.form-group label+.textarea-default {
-    margin: 8px 0 0;
 }
 
 .textarea-default {
@@ -273,57 +257,35 @@ textarea {
   font-size: 12px;
   text-align: center;
 }
-
-
 .sell-form-box {
   float: right;
   width: 400px;
   margin: 0;
 }
-.sell-price>li:first-child {
-    /* padding: 0 0 24px; */
-    border: 0;
-}
-
-
-.sell-price>li:first-child {
-    padding: 0 0 24px;
-    border: 0;
-}
-.form-group {
-    margin: 40px 0 0;
-}
-
-.setsumei {
-  padding-top: 40px;
-}
-.form-group:first-child {
-    margin: 0;
-}
-
-.form-group select {
-     width: 100%;
-}
 .sell-price>li {
     padding: 24px 0;
     border-top: 1px solid #ccc;
 }
-
-
+.sell-price>li:first-child {
+    /* padding: 0 0 24px; */
+    border: 0;
+    padding: 0 0 24px;
+    border: 0;
+}
+.setsumei {
+  padding-top: 40px;
+}
 
 .sell-price .form-group .l-right {
     width: 45%;
     float: right;
 }
-
 .sell-price-input {
     text-align: right;
 }
-
 .l-left {
     float: left;
 }
-
 .l-middle{
   float: left;
   margin-top: 25px;
@@ -331,25 +293,12 @@ textarea {
 .l-right {
     float: right;
     width: 50%;
-/*    box-sizing: border-box;*/
-
 }
-.form-group .input-default {
-    width: 100%;
-    margin: 8px 0 0;
-}
-
-
-
-
-
-
 /*出品ボタン*/
 .sell-content {
     padding: 40px;
     border-top: 1px solid #eee;
 }
-
 .sell-btn-box .btn-red {
     margin: 40px 0 0;
 }
@@ -379,13 +328,6 @@ textarea {
     border: 1px solid #aaa;
     color: #fff;
 }
-
-
-
-
-
-
-
 
 
 
