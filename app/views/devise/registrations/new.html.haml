@@ -1,9 +1,8 @@
 %body
   .login-container
-    %header.login-header
-      %h1
-        %a{href: "/"}
-          %img{alt: "mercari", src: "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?1621863497"}/
+    .header
+    = render "shared/sub_header"
+
     %main.single-main
       .main-container
         .register
@@ -19,16 +18,5 @@
             %button#google-login.btn-sns
               %i.fab.fa-google-plus-g.fa-2x
               Googleでログイン
-    %footer.login-footer
-      %nav
-        %ul.clearfix
-          %li
-            %a{href: "/"} プライバシーポリシー
-          %li
-            %a{href: "/"} メルカリ利用規約
-          %li
-            %a{href: "/"} 特定商取引に関する表記
-      %a.footer-logo{href: "/"}
-        %img{alt: "mercari", height: "65", src: "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?1621863497", width: "80"}/
-      %p
-        %small ©︎ 2018 Mercari
+    .footer
+    = render "shared/sub_footer"

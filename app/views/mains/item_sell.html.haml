@@ -7,9 +7,8 @@
     %link{:href => "https://use.fontawesome.com/releases/v5.0.6/css/all.css", :rel => "stylesheet"}/
     %title ITEM SELL
   %body
-    %header
-      .heading
-    / /header
+    .header
+    = render "shared/sub_header"
     .soto
       %section.buy-item-container
         #sell-container
@@ -234,4 +233,5 @@
               出品する
               / /react-text
             %a.btn-default.btn-gray もどる
-    %footer
+    .footer
+      = render "shared/sub_footer"
