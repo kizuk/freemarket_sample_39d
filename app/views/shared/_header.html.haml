@@ -1,0 +1,36 @@
+%header.pc-header.visible-pc
+  .pc-header__inner
+    .pc-header__inner__clearfix
+      %h1.l-left
+        %a{href: "https://www.mercari.com/jp/"}
+          %img{alt: "mercari", height: "36", src: "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?1076135930", width: "134"}/
+      %form.pc-header-form.l-right{action: "https://www.mercari.com/jp/search/"}
+        %input.input-default{name: "keyword", placeholder: "キーワードから探す", type: "search", value: ""}/
+        %i.icon-search
+          =fa_icon'search', class: "search_icon"
+    .pc-header__nav-box.clearfix
+      %nav.l-left
+        %ul.pc-header-nav
+          %li
+            %h2
+              %a.pc-header-nav-root{href: "https://www.mercari.com/jp/category/"} カテゴリーから探す
+          %li
+            %h2
+              %a.pc-header-nav-root{href: "https://www.mercari.com/jp/brand/"} ブランドから探す
+      .nav.l-right-mypage
+        %ul.pc-header-user-nav
+          %li.mypage-link
+            %figure.user-icon
+              .user-icon-picture
+                %img{alt: "", src: "//static-mercari-jp-imgtr2.akamaized.net/thumb/members/636140400.jpg?1531754660",width: "32"}/
+            %span.mypage マイページ
+
+          %li.notice
+            %i.far.fa-bell
+            %span.notice__item お知らせ
+
+          %li.todo
+            =fa_icon 'check', class: "check_icon"
+            %span やることリスト
+
+
