@@ -1,0 +1,153 @@
+/*全称セレクタ*/
+* {
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+body {
+    position: relative;
+    min-height: 100%;
+    background: #f5f5f5;
+    font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+    font-size: 14px;
+    color: #333;
+    line-height: 1;
+}
+a {
+    color: #0099e8;
+    text-decoration: none;
+}
+ul, ol {
+    list-style: none;
+}
+* {
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+}
+h2 {
+    font-size: 22px;
+    line-height: 1.4;
+}
+h3 {
+    display: block;
+    font-size: 1.17em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+.clearfix:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.soto {
+  background-color: lightgrey;
+  height: 1550px;
+}
+.buy-item-container {
+  height: 1550px;
+  width: 700px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-style: solid;
+  border-width: 0;
+  font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+  text-align: center;
+}
+
+/*画像*/
+.buy-content-item {
+  margin: 16px 0 0;
+}
+.buy-content-item-photo {
+    min-width: 280px;
+    max-width: 360px;
+    min-height: 280px;
+    margin: 0 auto;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSW6JrfrRXOfvcvOoXME87FFtDfyLTAHU1vUpa-Hwi3M9NJzC9F");
+    background-size: cover;
+}
+.buy-content-item-name {
+    margin: 24px 0 60px 0;
+}
+.creditcard_icon {
+  width: 50px;
+  height: 30px;
+  margin-left: 0;
+}
+/*アイコン*/
+.content-icon {
+  margin: 0 auto;
+  width: 20%;
+  height: 30px;
+}
+
+.fas {
+  margin: 4px;
+}
+.fa-stars {
+  color: #fff176;
+}
+.fa-grin {
+  color: #ff4081;
+}
+.fa-meh {
+  color: #ffca28;
+}
+.fa-frown {
+  color: #00b0ff;
+}
+.content-text-line-height{
+  line-height: 20px;
+  margin-top: 20px;
+}
+
+
+/*発送をお待ちください*/
+.buy-content {
+  padding: 40px;
+  border-top: 1px solid #eee;
+  margin: 0;
+  display: block;
+ }
+
+.first {
+  background-color: #fffde7;
+}
+.buy-content-top {
+  color: red;
+  margin: 0 auto;
+  width: 35%;
+}
+.buy-content-top-l {
+  float: left;
+}
+.buy-content-top-r {
+  float: left;
+  line-height: 27px;
+  margin-left: 10px;
+}
+.sub-content {
+  max-width: 60%;
+  text-align: left;
+  margin: 0 auto;
+  line-height: 20px;
+}
+
+.buy-price .form-group .l-right {
+    width: 50%;
+}
+.l-single-head {
+  padding: 32px 16px;
+  font-size: 22px;
+  line-height: 1.5;
+  text-align: center;
+}
+
