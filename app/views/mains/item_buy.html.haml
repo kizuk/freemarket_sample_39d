@@ -7,7 +7,7 @@
     %title ITEM BUY
   %body
     .header
-    = render "shared/sub_header"
+      = render "shared/sub_header"
     .soto
       %section.buy-item-container
         / 発送お待ち下さい
@@ -18,17 +18,14 @@
             .buy-content-top-r
               %h3 発送をお待ちください
           出品者からの発送通知をお待ちください
-        / 購入完了しました
         #buy-container
           .buy-container-inner
             %h2.l-single-head 購入が完了しました
-        / 商品名
         .buy-content.clearfix
           .buy-content-item
             .buy-content-item-photo
             .buy-content-item-name
               %h3 商品名
-          / 価格
           .buy-content.clearfix
             #buy-container
               .buy-container-inner
@@ -58,7 +55,7 @@
                 = image_tag '1.png', class: "creditcard_icon"
           .buy-content
             %h3 発送通知後の流れ
-            .content-icon
+            .buy-content-icon
               %i.fas.fa-grin.fa-2x
               %i.fas.fa-meh.fa-2x
               %i.fas.fa-frown.fa-2x
@@ -78,4 +75,4 @@
                   %br/
 
     .footer
-    = render "shared/sub_footer"
+      = render "shared/sub_footer"
