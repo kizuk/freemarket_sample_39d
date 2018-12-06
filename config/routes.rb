@@ -6,4 +6,6 @@ root 'mains#index'
 
  get 'mains' => 'mains#item_sell'
 
+
+
 end
