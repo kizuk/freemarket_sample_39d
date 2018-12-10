@@ -1,0 +1,47 @@
+.bread-crumbs {
+  width: 100%;
+  height: 49px;
+  position: relative;
+  border-top: 1px solid #eee;
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+  background-color: #fff;
+  &__inner {
+    width: 1020px;
+    margin: 0 auto;
+    line-height: 49px;
+  }
+}
+
+.bread-crumbs-mercari-list {
+  display: inline-block;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+.bread-crumbs-mercari-url {
+  text-decoration: none;
+  color: #333;
+}
+
+.mercari {
+}
+
+.fa-angle-right {
+  margin: 0 8px;
+  font-size: 15px;
+  color: #888;
+  display: inline-block;
+  font-family: icon-font;
+}
+
+.bread-crumbs-name-list {
+  display: inline-block;
+  font-size: 14px;
+  line-height: 1.2;
+  padding-left: 5px;
+}
+
+.name {
+  color: #333;
+  font-weight: bold;
+}
