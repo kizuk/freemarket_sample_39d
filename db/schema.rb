@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_05_064714) do
+ActiveRecord::Schema.define(version: 2018_12_10_094228) do
+
+  create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "image_url", null: false
+    t.bigint "items_id", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["items_id"], name: "index_images_on_items_id"
+  end
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -38,4 +46,5 @@ ActiveRecord::Schema.define(version: 2018_12_05_064714) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "images", "items", column: "items_id"
 end
