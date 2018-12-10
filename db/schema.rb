@@ -10,10 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_10_103555) do
+ActiveRecord::Schema.define(version: 2018_12_10_114220) do
 
-  create_table "category_ls", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "genre"
+  create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "brand_name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -40,6 +40,28 @@ ActiveRecord::Schema.define(version: 2018_12_10_103555) do
     t.index ["name"], name: "index_items_on_name"
   end
 
+  create_table "l_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "genre"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "m_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "genre"
+    t.bigint "l_categories_id", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["l_categories_id"], name: "index_m_categories_on_l_categories_id"
+  end
+
+  create_table "s_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "genre"
+    t.bigint "m_categories_id", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["m_categories_id"], name: "index_s_categories_on_m_categories_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -53,4 +75,6 @@ ActiveRecord::Schema.define(version: 2018_12_10_103555) do
   end
 
   add_foreign_key "images", "items", column: "items_id"
+  add_foreign_key "m_categories", "l_categories", column: "l_categories_id"
+  add_foreign_key "s_categories", "m_categories", column: "m_categories_id"
 end
