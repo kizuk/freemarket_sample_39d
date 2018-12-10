@@ -1,0 +1,158 @@
+%section.item-box-container.l-single-container
+  %h1.item-name イヤリング ゴールド
+  .item-main-content.clearfix
+    .item-photo
+      .owl-carousel.owl-loaded.owl-drag
+        .owl-stage-outer
+          .owl-stage{style: "left: -300px; width: 1200px;"}
+            .owl-item{style: "width: 300px;"}
+            .owl-item{style: "width: 300px;"}
+              .owl-item-inner.is-higher-width
+                %img.owl-lazy{alt: "イヤリング ゴールド", "data-src" => "https://static-mercari-jp-imgtr2.akamaized.net/item/detail/orig/photos/m96728472898_1.jpg?1543393187", src: "https://static-mercari-jp-imgtr2.akamaized.net/item/detail/orig/photos/m96728472898_1.jpg?1543393187", style: "opacity: 1;"}/
+        .owl-nav.disabled
+          .owl-item-dots
+            .owl-item-dot
+              %span
+              .owl-item-dot-inner
+                %img{src: "https://static-mercari-jp-imgtr2.akamaized.net/item/detail/orig/photos/m96728472898_1.jpg?1543393187"}/
+            .owl-item-dot
+              %span
+              .owl-item-dot-inner
+                %img{src: "https://static-mercari-jp-imgtr2.akamaized.net/item/detail/orig/photos/m96728472898_1.jpg?1543393187"}/
+            .owl-item-dot
+              %span
+              .owl-item-dot-inner
+                %img{src: "https://static-mercari-jp-imgtr2.akamaized.net/item/detail/orig/photos/m96728472898_1.jpg?1543393187"}/
+            .owl-item-dot
+              %span
+              .owl-item-dot-inner
+                %img{src: "https://static-mercari-jp-imgtr2.akamaized.net/item/detail/orig/photos/m96728472898_1.jpg?1543393187"}/
+
+          .owl-prev prev
+          .owl-next next
+        .owl-item-dots.disabled{style: "display: none;"}
+          .owl-item-dot.active
+            %span
+
+    %table.item-detail-table
+      %tbody
+        %tr
+          %th.left 出品者
+          %td.right
+            %a
+            =link_to"おかゆ", "https://www.mercari.com/jp/u/460400701/", class: "user-link"
+            %div
+              .item-user-ratings
+                %i
+                =fa_icon"grin", class: "fa-grin"
+                %span.rating-count 3
+              .item-user-ratings
+                %i
+                =fa_icon"meh", class: "fa-meh"
+                %span.rating-count 0
+              .item-user-ratings
+                %i
+                =fa_icon"frown", class: "fa-frown"
+                %span.rating-count 0
+        %tr
+          %th.left カテゴリー
+          %td.right
+            %a
+            =link_to"レディース", "https://www.mercari.com/jp/category/1/", class: "user-link"
+            %a{href: "https://www.mercari.com/jp/category/21/", class: "user-link"}
+              .item-detail-table-sub-category
+                %i.fas.fa-angle-right
+                アクセサリー
+            %a{href: "https://www.mercari.com/jp/category/232/", class: "user-link"}
+              .item-detail-table-sub-sub-category
+                %i.fas.fa-angle-right
+                イヤリング
+        %tr
+          %th.left ブランド
+          %td.right
+        %tr
+          %th.left 商品の状態
+          %td.right 未使用に近い
+        %tr
+          %th.left 配送料の負担
+          %td.right 送料込み(出品者負担)
+        %tr
+          %th.left 配送の方法
+          %td.right ゆうゆうメルカリ便
+        %tr
+          %th.left 配送元地域
+          %td.right
+            %a
+            =link_to"神奈川県","https://www.mercari.com/jp/area/14/", class: "user-link"
+        %tr
+          %th.left 発送日の目安
+          %td.right 2~3日で発送
+
+
+  .item-price-box.text-center
+    %span.item-price.bold ¥ 1,400
+    %span.item-tax (税込)
+    %span.item-shipping-fee 送料込み
+  %a.item-buy-btn.f18-24{"data-client" => "hidden", href: "https://www.mercari.com/jp/transaction/buy/m96728472898/"} 購入画面に進む
+  %a.item-btn-client{href: "https://www.mercari.com/jp/transaction/buy/m96728472898/"}
+
+  .item-description.f14
+    %p.item-description-inner
+      耳につけると揺れて
+      キラキラ光るのでとてもかわいいです！
+
+      シンプルなデザインなので
+      何にでも合わせやすいと思います！
+  .item-button-container.clearfix
+    .item-button-left
+      %button.item-button.item-button-like{"data-ga" => "element", "data-ga-category" => "LIKE", "data-ga-label" => "like!", "data-id" => "m96728472898", "data-toggle" => "like", name: "like!", type: "button"}
+        %i.far.fa-heart
+        %span.likes いいね!
+        %span.fade-in-down{"data-num" => "like"} 0
+      %a.item-button.item-button-report.clearfix{"data-modal" => "report-item", "data-open" => "modal", href: ""}
+        %i.far.fa-flag
+        %span.likes 不適切な商品の報告
+      %input{name: "like_add_url", type: "hidden", value: "https://www.mercari.com/jp/like/add/m96728472898/"}/
+      %input{name: "like_del_url", type: "hidden", value: "https://www.mercari.com/jp/like/delete/m96728472898/"}/
+      %input{name: "__csrf_value", type: "hidden", value: "bf7b2fda7335a5d89389e2baf4233423142eed33fbf9dd764775197516135b4f2f3365d538e21c93ea381fd93c6e4bd1412fa7348878f3ee08abfb8255def7d9d"}/
+    .item-button-right
+      %a{href: "https://www.mercari.com/jp/safe/description/", target: "_blank"}
+        %i.fas.fa-lock
+        %span.safety あんしん・あんぜんへの取り組み
+.item-detail-message
+  .message-container
+    .message-content
+      %form.message-form{action: "https://www.mercari.com/jp/comment/add/", method: "POST"}
+        %input{:name => "__csrf_value", :type => "hidden", :value => "bf7b2fda7335a5d89389e2baf4233423142eed33fbf9dd764775197516135b4f2f3365d538e21c93ea381fd93c6e4bd1412fa7348878f3ee08abfb8255def7d9d"}/
+        %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+        %input{name: "item_id", type: "hidden", value: "m96728472898"}/
+        %input{name: "redirect_url_key", type: "hidden",value: "item_detail"}/
+        %textarea.textarea-default{name: "body", type: "text", value: ""}
+        %button.message-submit.btn-default.btn-gray{type: "submit"}
+          %span コメントする
+
+%ul.nav-item-link-prev-next.clearfix
+  %li.nav-item-link-prev
+    %a{href: "https://item.mercari.com/jp/m98330153818/"}
+      %i.fas.fa-chevron-left
+      プーマ ウィンドブレーカー 160
+  %li.nav-item-link-next
+    %a{href: "https://item.mercari.com/jp/m12890139662/"}
+      ロングブーツ茶色
+      %i.fas.fa-chevron-right
+
+
+.item-social-media-box
+  %ul.social-media-box
+    %li
+      %a.share-btn{"data-window-name" => "facebook_window", href: "http://www.facebook.com/share.php?u=https%3A%2F%2Fitem.mercari.com%2Fjp%2Fm48649315539%2F", target: "_blank"}
+        %i.fab.fa-facebook-f
+    %li
+      %a.share-btn{"data-window-name" => "twitter_window", href: "http://twitter.com/share?count=horizontal&original_referer=https%3A%2F%2Fitem.mercari.com%2Fjp%2Fm48649315539%2F&text=CANMAKE%20glow%20flare%20%E2%80%A6%20%28%C2%A5%20500%29%20https%3A%2F%2Fitem.mercari.com%2Fjp%2Fm48649315539%2F%20%E3%83%95%E3%83%AA%E3%83%9E%E3%82%A2%E3%83%97%E3%83%AA%E3%80%8C%E3%83%A1%E3%83%AB%E3%82%AB%E3%83%AA%E3%80%8D%E3%81%A7%E8%B2%A9%E5%A3%B2%E4%B8%AD%E2%99%AA%20%23%E3%83%A1%E3%83%AB%E3%82%AB%E3%83%AA%20%40mercari_jp%E3%81%95%E3%82%93%E3%81%8B%E3%82%89", target: "_blank"}
+        %i.fab.fa-twitter
+    %li
+      %a.share-btn{"data-window-name" => "pinterest_window", href: "http://pinterest.com/pin/create/button/?url=https%3A%2F%2Fitem.mercari.com%2Fjp%2Fm48649315539%2F&media=https%3A%2F%2Fstatic-mercari-jp-imgtr2.akamaized.net%2Fitem%2Fdetail%2Forig%2Fphotos%2Fm48649315539_1.jpg%3F1544241017&description=%E3%83%A1%E3%83%AB%E3%82%AB%E3%83%AA%E5%95%86%E5%93%81%3A%20CANMAKE%20glow%20flare%20cheek07%20%23%E3%83%A1%E3%83%AB%E3%82%AB%E3%83%AA", target: "_blank"}
+        %i.fab.fa-pinterest-square
+
+
+
