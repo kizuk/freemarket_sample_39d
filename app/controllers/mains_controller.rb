@@ -3,7 +3,7 @@ class MainsController < ApplicationController
  def index
  end
 
- def item_sell
+ def mypage
  end
 
 end
