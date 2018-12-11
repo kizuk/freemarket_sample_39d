@@ -32,5 +32,8 @@
           %li.todo
             =fa_icon 'check', class: "check_icon"
             %span やることリスト
+          %li.todo
+            = link_to "ログアウト",destroy_user_session_path, method: :delete
+
 
 
