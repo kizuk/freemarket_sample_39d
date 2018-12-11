@@ -1,34 +1,29 @@
 %body
-  .login-container
-    %header.login-header
-      %h1
-        %a{href: "/"}
-          %img{alt: "mercari", src: "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?1621863497"}/
-    %main.login-main
-      .login-no-account
-        %p アカウントをお持ちでない方はこちら
-        %a.new-account{href: "/"} 新規会員登録
+  .header
+  = render "shared/sub_header"
+
+  %main.login-main
+    .login-no-account
+      %p アカウントをお持ちでない方はこちら
+      %a.new-account{href: "/users/create"} 新規会員登録
+    .login-form
+      %button#facebook-login.btn-sns
+        %i.fab.fa-facebook.fa-2x
+        Facebookでログイン
+      %button#google-login.btn-sns
+        %i.fab.fa-google-plus-g.fa-2x
+        Googleでログイン
       .login-form
-        %button#facebook-login.btn-sns
-          %i.fab.fa-facebook.fa-2x
-          Facebookでログイン
-        %button#google-login.btn-sns
-          %i.fab.fa-google-plus-g.fa-2x
-          Googleでログイン
-      %form{method: "POST", novalidate: "novalidate"}
-        .login-form
-          .form-group
-            %input.login-input{name: "email", placeholder: "メールアドレス", type: "email", value: ""}/
-          .form-group
-            %input.login-input{name: "password", placeholder: "パスワード", type: "password"}/
-      .form-group-robot
-        .g-recaptcha.login-captcha{"data-sitekey" => "6LfZGCYTAAAAAHoK-s7Lg5OdYg5Fq4susvALmZoc"}
-          %div{:style => "width: 304px; height: 78px;"}
-            %div
-              %iframe{frameborder:  "0", height: "78", name: "a-at22efh9cyhu", role:  "presentation", sandbox:  "allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox", scrolling: "no", src: "https://www.google.com/recaptcha/api2/anchor?ar=1&k=6LfZGCYTAAAAAHoK-s7Lg5OdYg5Fq4susvALmZoc&co=aHR0cHM6Ly93d3cubWVyY2FyaS5jb206NDQz&hl=ja&v=v1542004393985&size=normal&cb=i8l4npmijycl", width: "304"}
-            %textarea#g-recaptcha-response.g-recaptcha-response{name: "g-recaptcha-response", style: "width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"}
-      %button.login-submit{type: "submit"}
-        ログイン
-      %a.lost-password{href: "/"} パスワードをお忘れの方
-    .footer
-    = render "shared/sub_footer"
+        = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+          .field
+            .field-input.login-input
+              = f.email_field :email, autofocus: true, placeholder: "  メールアドレス"
+          .field
+            .field-input.login-input
+              = f.password_field :password, autocomplete: "off", placeholder: "  パスワード"
+          .actions
+            = f.submit "ログイン", class: 'btn',href: "/"
+    %a.lost-password{href: "/"} パスワードをお忘れの方
+
+  .footer.sub_footer
+  = render "shared/sub_footer"

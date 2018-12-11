@@ -1,205 +1,288 @@
 main{
   background: #eee;
 }
+    .l-container{
+        padding: 80px 0;
+        margin: 0 auto;
+        width: 1020px;
+        height: 1292px;
 
-.l-container{
-    padding: 40px 0;
-    margin: 0 auto;
-    width: 1020px;
-    height: 1292px;
+        .l-content{
+          float: right;
+          width: 700px;
+          background: #fff;
 
-    .l-content{
-      float: right;
-      width: 700px;
-      background: #fff;
-
-      .mypage-user-icon{
-        height: 160px;
-        position: relative;
-        padding: 20px;
-        background: yellow;
-
-        a{
-          display: block;
-          position: absolute;
-          top: 21%;
-          left: 0;
-          right: 0;
-          color: #333;
-        }
-
-        figure{
-          overflow: hidden;
-          width: 60px;
-          height: 60px;
-          margin: 0 auto;
-          border-radius: 50%;
-
-          img{
-            width: 60px;
-            height: 60px;
-          }
-        }
-
-        h2{
-          margin: 8px 0 0;
-          font-size: 12px;
-          text-align: center;
-        }
-
-        .mypage-number{
-          margin: 8px 0 0;
-          font-size: 0;
-          text-align: center;
-
-          .evaluation{
-            display: inline-block;
-            font-size: 13px;
-          }
-
-          .solditems{
-            display: inline-block;
-            font-size: 13px;
-            margin: 0 0 0 16px;
-          }
-
-          .bold{
-            display: inline-block;
-            margin: 0 0 0 8px;
-            font-size: 14px;
-          }
-        }
-      }
-
-      .mypage-tab-container-notification-todo{
-        margin: 0;
-        background: #fff;
-      }
-
-      .mypage-tabs{
-        border: 0;
-        font-size: 0;
-        background: #ddd;
-        padding-inline-start: 0px;
-
-        li{
-          width: 50%;
-          display: inline-block;
-          text-align: center;
-          vertical-align: top;
-        }
-
-        li.active{
-          background: white;
-          border-top: 2px solid red;
-          .change{
-          }
-        }
-
-        h3{
-          font-size: 22px;
-          cursor: pointer;
-
-          .change{
+          .mypage-user-icon{
+            height: 160px;
             position: relative;
+            padding: 20px;
+            background: yellow;
+
+            a{
+              display: block;
+              position: absolute;
+              top: 21%;
+              left: 0;
+              right: 0;
+              color: #333;
+            }
+
+            figure{
+              overflow: hidden;
+              width: 60px;
+              height: 60px;
+              margin: 0 auto;
+              border-radius: 50%;
+
+              .mypic{
+                width: 60px;
+                height: 60px;
+              }
+            }
+
+            h2.bold{
+              margin: 8px 0 0;
+              font-size: 12px;
+              text-align: center;
+            }
+
+            .mypage-number{
+              margin: 8px 0 0;
+              font-size: 0;
+              text-align: center;
+
+              .evaluation{
+                display: inline-block;
+                font-size: 13px;
+              }
+
+              .solditems{
+                display: inline-block;
+                font-size: 13px;
+                margin: 0 0 0 16px;
+              }
+
+              .bold{
+                display: inline-block;
+                margin: 0 0 0 8px;
+                font-size: 14px;
+              }
+            }
+            }
+        }
+    }
+
+        .mypage-tab-container-notification-todo{
+          margin: 0;
+          background: #fff;
+
+          ul{
             display: block;
-            color: #333;
+            border: 0;
+            font-size: 0;
+            background: #ddd;
+            padding-inline-start: 0px;
+
+            li.mypage-notification{
+              width: 50%;
+              display: inline-block;
+              text-align: center;
+              vertical-align: top;
+              float: left;
+              padding: 0px;
+            }
+
+           li.mypage-todo{
+              width: 50%;
+              display: inline-block;
+              text-align: center;
+              vertical-align: top;
+              float: right;
+              padding: 0px;
+            }
+
+            li.active{
+              background: white;
+              border-top: 2px solid red;
+              .change{
+              }
+            }
+
+            h3{
+              font-size: 22px;
+              cursor: pointer;
+
+              .change{
+                position: relative;
+                display: block;
+                color: #333;
+                font-size: 16px;
+                line-height: 72px;
+                font-weight: 600;
+              }
+            }
+          }
+
+          .tab-content{
+
+            .tab-pane.active{
+              display: block;
+            }
+
+            .tab-pane{
+              display: none;
+            }
+
+            .mypage-item-not-found.bold{
+              padding: 160px;
+              background-size: 78px 85px;
+              text-align: center;
+              font-size: 16px;
+              color: #ccc;
+            }
+          }
+        }
+
+        .adjustment{
+          position: absolute; top: 801px;
+          width: 700px;
+          height: 30px;
+          background: #eee;
+        }
+        .mypage-tab-container-lower{
+          margin-top: 30px;
+          width: 700px;
+          background: #eee;
+
+          .mypage-tab-head-lower{
+            padding: 0 16px;
+            background: #fafafa;
             font-size: 16px;
             line-height: 72px;
+          }
+
+          ul.mypage-tabs-lower{
+            display: block;
+            border: 0;
+            font-size: 0;
+            background: #ddd;
+            padding-inline-start: 0px;
+
+            li.mypage-trade-lower{
+              width: 50%;
+              display: inline-block;
+              text-align: center;
+              vertical-align: top;
+              float: left;
+              padding: 0px;
+            }
+
+           li.mypage-past{
+              width: 50%;
+              display: inline-block;
+              text-align: center;
+              vertical-align: top;
+              float: right;
+              padding: 0px;
+            }
+
+            li.active{
+              background: white;
+              border-top: 2px solid red;
+              .change{
+              }
+            }
+
+            h3{
+              font-size: 22px;
+              cursor: pointer;
+
+              .change{
+                position: relative;
+                display: block;
+                color: #333;
+                font-size: 16px;
+                line-height: 72px;
+                font-weight: 600;
+              }
+            }
+          }
+
+          .tab-content{
+
+            .tab-pane.active{
+              display: block;
+            }
+
+            .tab-pane{
+              display: none;
+            }
+
+            .mypage-item-not-found.bold{
+              padding: 160px;
+              background-size: 78px 85px;
+              text-align: center;
+              font-size: 16px;
+              color: #ccc;
+            }
+          }
+        }
+
+      .l-side{
+        float: left;
+        width: 280px;
+        margin: 0 40px 0 0;
+
+          ul.mypage-nav-list{
+            padding-inline-start: 0px;
+          }
+
+          li.mypage-nav-list-each{
+            border-top: 1px solid #eee;
+            font-size: 13px;
+            height: 25px;
+            background: #fff;
+            list-style: none;
+            display: block;
+            display: flex;
+            align-items: center;
+
+            .mypage-nav-list-item{
+              position: relative;
+              display: block;
+            }
+
+            a{
+              color: #000;
+            }
+          }
+
+          li.mypage-nav-list-each.active{
+            background: #ccc;
+            font-weight: 600;
+            display: block;
+          }
+
+          .mypage-nav-head{
+            margin: 40px 0 4px 0px;
+            width: 280px;
+            font-size: 16px;
             font-weight: 600;
           }
         }
-      }
 
-      .tab-content{
-
-        .tab-pane.active{
-          display: block;
+        .bold{
+          font-weight: 600;
         }
 
-        .tab-pane{
-          display: none;
-        }
-
-        .mypage-item-not-found.bold{
-          padding: 160px;
-          background-size: 78px 85px;
-          text-align: center;
-          font-size: 16px;
-          color: #ccc
-        }
-      }
-
-      .adjustment{
-        height: 40px;
-        width: 700px;
-        background: #eee;
-      }
-
-      .mypage-tab-container{
-        background: #fff;
-
-        .mypage-tab-head{
-          padding: 0 16px;
-          background: #fafafa;
-          font-size: 16px;
-          line-height: 72px;
-        }
-      }
-    }
-  }
-
-    .l-side{
-      float: left;
-      width: 280px;
-      margin: 0 40px 0 0;
-      position: absolute; top: 32px;
-      ul{
-        padding-inline-start: 0px;
-      }
-      li{
-        border-top: 1px solid #eee;
-        font-size: 13px;
-        height: 48px;
-        background: #fff;
-        list-style: none;
-
-        .mypage-nav-list-item{
-          position: relative;
-          display: block;
-          padding: 16px;
+        h2{
+          line-height: 1.4;
         }
 
         a{
-          color: #000;
+          text-decoration: none;
         }
-      }
 
-      li.active{
-        background: #ccc;
-        font-weight: 600;
-      }
-
-      .mypage-nav-head{
-        margin: 40px 0 4px 0px;
-        width: 280px;
-        font-size: 16px;
-        font-weight: 600;
-      }
-    }
-
-    .bold{
-      font-weight: 600;
-    }
-
-    h2{
-      line-height: 1.4;
-    }
-
-    a{
-      text-decoration: none;
-    }
-
-    .mypage-nav-list li:hover{
-      background: #f5f5f5f5;
-    }
+        .mypage-nav-list li:hover{
+          background: #f5f5f5f5;
+        }

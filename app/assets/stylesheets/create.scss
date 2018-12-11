@@ -1,0 +1,68 @@
+.single-box {
+	height: 500px;
+	width: 100%;
+	background-color: #F8F8F8;
+}
+
+.main-box {
+	height: 500px;
+	width: 50%;
+	background-color: white;
+	margin: 0 auto;
+}
+
+.main-message {
+	height: 100px;
+	text-align: center;
+	width: 100%;
+	border-bottom: solid 1px;
+	border-bottom-color: #F8F8F8;
+}
+
+.main_parag {
+	font-size: 20px;
+	padding-top: 50px;
+}
+
+.field-input {
+	display: block;
+	margin: 0 auto;
+	font-size: 15px;
+}
+
+
+#user_email {
+	height: 50px;
+	width: 63%;
+    margin-right: 138px;
+}
+
+.field-label {
+	margin-left: 140px;
+	margin-top: 20px;
+}
+
+#user_password {
+   	height: 50px;
+	width: 63%;
+	margin-right: 138px;
+	margin-top: 20px;
+}
+
+#user_password_confirmation {
+   	height: 50px;
+	width: 63%;
+    margin-left: 105px;
+}
+
+.btn {
+	padding: 20px;
+	margin-top: 50px;
+	width: 80%;
+	height: 50px;
+	border: solid 1px;
+	border-color: white;
+	background-color: #DC143C;
+	color: white;
+	line-height: 5px;
+}
