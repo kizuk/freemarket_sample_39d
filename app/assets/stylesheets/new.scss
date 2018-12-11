@@ -11,7 +11,7 @@
 	background-color: #F8F8F8;
 }
 
-img {
+.login-header img {
 	display: block;
 	top: 0;
 	height: 100px;
@@ -109,17 +109,17 @@ i {
 	padding-top: 25px;
 }
 
-nav {
+.login-footer nav {
 	text-align: center;
 	margin-top: 0;
 }
 
-li {
+.login-footer li {
 	display: inline-block;
     padding: 10px 10px;
 }
 
-li a {
+.login-footer li a {
 	text-decoration: none;
     font-size: 12px;
     color: black;
