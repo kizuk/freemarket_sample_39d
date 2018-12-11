@@ -10,7 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_05_064714) do
+ActiveRecord::Schema.define(version: 2018_12_10_114220) do
+
+  create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "brand_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "image_url", null: false
+    t.bigint "items_id", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["items_id"], name: "index_images_on_items_id"
+  end
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -26,6 +40,28 @@ ActiveRecord::Schema.define(version: 2018_12_05_064714) do
     t.index ["name"], name: "index_items_on_name"
   end
 
+  create_table "l_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "genre"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "m_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "genre"
+    t.bigint "l_categories_id", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["l_categories_id"], name: "index_m_categories_on_l_categories_id"
+  end
+
+  create_table "s_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "genre"
+    t.bigint "m_categories_id", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["m_categories_id"], name: "index_s_categories_on_m_categories_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -38,4 +74,7 @@ ActiveRecord::Schema.define(version: 2018_12_05_064714) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "images", "items", column: "items_id"
+  add_foreign_key "m_categories", "l_categories", column: "l_categories_id"
+  add_foreign_key "s_categories", "m_categories", column: "m_categories_id"
 end
