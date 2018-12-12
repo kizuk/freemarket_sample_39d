@@ -1,71 +1,70 @@
-%body
-  / .header
-  /   = render "shared/sub_header"
-  .soto
-    %section.buy-item-container
-      / 発送お待ち下さい
-      .buy-content.first.clearfix
-        .buy-content-top.clearfix
-          .buy-content-top-l
-            %i.far.fa-clock.fa-2x
-          .buy-content-top-r
-            %h3 発送をお待ちください
-        出品者からの発送通知をお待ちください
-      #buy-container
-        .buy-container-inner
-          %h2.l-single-head 購入が完了しました
+/ .header
+/   = render "shared/sub_header"
+.soto
+  %section.buy-item-container
+    / 発送お待ち下さい
+    .buy-content.first.clearfix
+      .buy-content-top.clearfix
+        .buy-content-top-l
+          %i.far.fa-clock.fa-2x
+        .buy-content-top-r
+          %h3 発送をお待ちください
+      出品者からの発送通知をお待ちください
+    #buy-container
+      .buy-container-inner
+        %h2.l-single-head 購入が完了しました
+    .buy-content.clearfix
+      .buy-content-item
+        .buy-content-item-photo
+        .buy-content-item-name
+          %h3 商品名
       .buy-content.clearfix
-        .buy-content-item
-          .buy-content-item-photo
-          .buy-content-item-name
-            %h3 商品名
-        .buy-content.clearfix
-          #buy-container
-            .buy-container-inner
-              %p
-              = succeed "\u{9001}\u{6599}\u{8fbc}\u{307f}" do
-                %h2.l-single-head ¥ 999,999
-        / 配送先
-        .buy-content.clearfix
-          .sub-content
-            %h3 配送先
-            〒000-0000
+        #buy-container
+          .buy-container-inner
+            %p
+            = succeed "\u{9001}\u{6599}\u{8fbc}\u{307f}" do
+              %h2.l-single-head ¥ 999,999
+      / 配送先
+      .buy-content.clearfix
+        .sub-content
+          %h3 配送先
+          〒000-0000
+          %br/
+          東京都品川区あああ町999-99
+          %br/
+          メルカリ タロー
+          %br/
+      / 支払い方法
+      .buy-content.clearfix
+        .sub-content
+          %h3 支払い方法
+          0123456789
+          %br>/
+          clock
+          12/04
+          %br/
+          .creditcard-image
+            = image_tag '1.png', class: "creditcard_icon"
+      .buy-content
+        %h3 発送通知後の流れ
+        .buy-content-icon
+          %i.fas.fa-grin.fa-2x
+          %i.fas.fa-meh.fa-2x
+          %i.fas.fa-frown.fa-2x
+        .content-text-line-height
+          商品を受け取ったら
+          %br/
+          出品者の評価をしましょう。
+          %br/
+          購入代金が出品者に振り込まれます。
+          %br/
+          評価後に取引は完了です。
+          %br/
+        %a{:href => "", :target => "_blank"}
+          %strong
             %br/
-            東京都品川区あああ町999-99
-            %br/
-            メルカリ タロー
-            %br/
-        / 支払い方法
-        .buy-content.clearfix
-          .sub-content
-            %h3 支払い方法
-            0123456789
-            %br>/
-            clock
-            12/04
-            %br/
-            .creditcard-image
-              = image_tag '1.png', class: "creditcard_icon"
-        .buy-content
-          %h3 発送通知後の流れ
-          .buy-content-icon
-            %i.fas.fa-grin.fa-2x
-            %i.fas.fa-meh.fa-2x
-            %i.fas.fa-frown.fa-2x
-          .content-text-line-height
-            商品を受け取ったら
-            %br/
-            出品者の評価をしましょう。
-            %br/
-            購入代金が出品者に振り込まれます。
-            %br/
-            評価後に取引は完了です。
-            %br/
-          %a{:href => "", :target => "_blank"}
-            %strong
+            = succeed "\u{30de}\u{30a4}\u{30da}\u{30fc}\u{30b8}\u{3078}\u{3082}\u{3069}\u{308b}" do
               %br/
-              = succeed "\u{30de}\u{30a4}\u{30da}\u{30fc}\u{30b8}\u{3078}\u{3082}\u{3069}\u{308b}" do
-                %br/
 
-  / .footer
-  /   = render "shared/sub_footer"
+/ .footer
+/   = render "shared/sub_footer"
