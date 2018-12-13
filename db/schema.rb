@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_10_114220) do
+ActiveRecord::Schema.define(version: 2018_12_13_104443) do
 
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "brand_name"
@@ -41,11 +41,13 @@ ActiveRecord::Schema.define(version: 2018_12_10_114220) do
     t.bigint "mcategories_id"
     t.bigint "scategories_id"
     t.bigint "brands_id"
+    t.bigint "user_id"
     t.index ["brands_id"], name: "index_items_on_brands_id"
     t.index ["lcategories_id"], name: "index_items_on_lcategories_id"
     t.index ["mcategories_id"], name: "index_items_on_mcategories_id"
     t.index ["name"], name: "index_items_on_name"
     t.index ["scategories_id"], name: "index_items_on_scategories_id"
+    t.index ["user_id"], name: "index_items_on_user_id"
   end
 
   create_table "lcategories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -83,6 +85,7 @@ ActiveRecord::Schema.define(version: 2018_12_10_114220) do
   end
 
   add_foreign_key "images", "items", column: "items_id"
+  add_foreign_key "items", "users"
   add_foreign_key "mcategories", "lcategories", column: "lcategories_id"
   add_foreign_key "scategories", "mcategories", column: "mcategories_id"
 end
