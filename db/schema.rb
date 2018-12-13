@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_13_104443) do
+ActiveRecord::Schema.define(version: 2018_12_13_124849) do
 
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "brand_name"
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 2018_12_13_104443) do
     t.bigint "scategories_id"
     t.bigint "brands_id"
     t.bigint "user_id"
+    t.string "shipping_date"
     t.index ["brands_id"], name: "index_items_on_brands_id"
     t.index ["lcategories_id"], name: "index_items_on_lcategories_id"
     t.index ["mcategories_id"], name: "index_items_on_mcategories_id"
