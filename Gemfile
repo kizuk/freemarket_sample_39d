@@ -77,5 +77,7 @@ end
 
 gem 'devise'
 gem 'mechanize'
-
+gem 'pry-rails'
+gem 'pry-byebug'
+gem 'pry-doc'
 
