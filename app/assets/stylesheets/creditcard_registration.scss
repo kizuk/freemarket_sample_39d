@@ -1,0 +1,175 @@
+  .l-container-creditcard-regis.clearfix{
+    width: 1310px;
+    height: 1500px;
+    margin: auto 0;
+    background-color: #eee;
+    position: relative; top: -40px;
+  }
+
+  .l-container-creditcard-regis.clearfix:after{
+    width: 1310px;
+    height: 40px;
+    background-color: #eee;
+    position: relative; top: 960px;
+  }
+
+    .l-content-creditcard-regis{
+      margin: 80px 145px;
+      float: right;
+      width:700px;
+      height: 360px;
+      background-color: #fff;
+    }
+
+    .l-chapter-container-creditcard-regis{
+      background-color: blue;
+      width: 700px;
+      height: 360px;
+    }
+
+    .l-single-inner-creditcard-regis{
+      border-top: 1px solid #f5f5f5;
+      padding: 64px 0;
+      width: 700px;
+      height: 200px;
+      background-color: #fff;
+    }
+
+    .section-creditcard-regis{
+      display: block;
+      color: #000;
+      margin: 0;
+      width: 572px;
+      height: 19px;
+      margin: 0 126px 0 90px;
+    }
+
+    .l-single-content-creditcard-regis{
+      max-width: 320px;
+      margin: 0 auto;
+      display: block;
+    }
+
+    .settings-add-card{
+      padding: 24px 0;
+      display: block;
+      width: 572px;
+      margin-bottom: 1px solid;
+    }
+
+    .settings-add-card:before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: 1155px;/*線の上下位置*/
+      display: inline-block;
+      width: 550px;/*線の長さ*/
+      height: 1px;/*線の太さ*/
+      -moz-transform: translateX(-50%);
+      -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      transform: translateX(-20%);/*位置調整*/
+      background-color: #dcdcdc;/*線の色*/
+    }
+
+    .l-single-content-add-card{
+      max-width: 300px;
+      margin: 0 auto;
+      display: block;
+      margin: 0 126px 0 210px;
+    }
+
+          .settings-not-regist{
+            display: block;
+            width: 572px;
+            a{
+              display: block;
+              margin: 40px 0 0;
+              text-align: right;
+            }
+          }
+
+      .l-side{
+        display: block;
+        float: left;
+        width: 280px;
+        position: absolute; top: 100px; left: 145px;
+
+          ul.mypage-nav-list{
+            padding-inline-start: 0px;
+          }
+
+          li.mypage-nav-list-each{
+            border-top: 1px solid #eee;
+            font-size: 13px;
+            height: 45px;
+            background: #fff;
+            list-style: none;
+            display: block;
+            display: flex;
+            align-items: center;
+
+            .mypage-nav-list-item{
+              position: relative;
+              display: block;
+            }
+
+            a{
+              color: #000;
+            }
+          }
+
+          li.mypage-nav-list-each.active{
+            background: #ccc;
+            font-weight: 600;
+            height: 45px;
+            display: block;
+            list-style: none;
+            display: block;
+            display: flex;
+            align-items: center;
+          }
+
+          .mypage-nav-head{
+            margin: 40px 0 4px 0px;
+            width: 280px;
+            font-size: 16px;
+            font-weight: 600;
+          }
+        }
+
+        .bold{
+          font-weight: 600;
+        }
+
+
+        a{
+          text-decoration: none;
+        }
+
+        .mypage-nav-list li:hover{
+          background: #f5f5f5f5;
+        }
+
+      h4{
+        font-size: 24px;
+        padding: 8px 24px;
+        border-bottom: 1px solid #f5f5f5;
+        display: block;
+        text-align: center;
+        background-color: #fff;
+        height: 30px;
+      }
+
+      h3{
+        font-size: 16px;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-weight: bold;
+      }
+
+      .i.icon-arrow-right{
+        position: absolute; top: 382px; right: 260px;
+      }

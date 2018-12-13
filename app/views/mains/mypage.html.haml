@@ -1,5 +1,6 @@
 .header
   = render "shared/header"
+
 %main
   .l-container.clearfix
     .l-content
@@ -45,6 +46,24 @@
             %li.mypage-item-not-found.bold 取引中の商品がありません
           %ul.tab-pane.mypage-past-list
             %li.mypage-item-not-found.bold 過去に取引した商品がありません
+=======
+
+  .l-container-creditcard-regis.clearfix
+    .l-content-creditcard-regis
+      .l-chapter-container-creditcard-regis
+        %h4.l-chapter-head-creditcard-regis 支払い方法
+        .l-single-inner-creditcard-regis
+          .section-creditcard-regis
+            .l-single-content-creditcard-regis
+              %h3.l-chapter-sub-head-creditcard-regis クレジットカード一覧
+          .settings-add-card
+            .l-single-content-add-card
+              = link_to "クレジットカードを追加する", destroy_user_session_path, method: :delete, class: "btn-default btn-red submit_button"
+              %i.icon-card
+          .settings-not-regist
+            %a{href: "/jp/help_center/category/6/", target: "_blank"}
+              %span 支払い方法について
+              .i.icon-arrow-right >
 
     .l-side
       .maypage-nav
