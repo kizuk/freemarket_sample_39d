@@ -1,22 +1,21 @@
-%body
-  .login-container
-    .header
-    = render "shared/sub_header"
+%body#login-body
+  .header
+  = render "shared/sub_header"
 
-    %main.single-main
-      .main-container
-        .register
-          %h2 新規会員登録
-        .form-group
-          .login-form
-            %button.login-input{onclick: "location.href='/users/sign_up'"}
-              メールアドレスで登録
-          .login-form
-            %button#facebook-login.btn-sns
-              %i.fab.fa-facebook.fa-2x
-              Facebookでログイン
-            %button#google-login.btn-sns
-              %i.fab.fa-google-plus-g.fa-2x
-              Googleでログイン
-    .footer
-    = render "shared/sub_footer"
+  %main.single-main
+    .main-container
+      .register
+        %h2 新規会員登録
+      .form-group
+        .login-form
+          %button.login-input{onclick: "location.href='/users/sign_up'"}
+            メールアドレスで登録
+        .login-form
+          %button#facebook-login.btn-sns
+            %i.fab.fa-facebook.fa-2x
+            Facebookでログイン
+          %button#google-login.btn-sns
+            %i.fab.fa-google-plus-g.fa-2x
+            Googleでログイン
+  .footer
+  = render "shared/sub_footer"
