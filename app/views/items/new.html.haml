@@ -10,12 +10,14 @@
     .header
     = render "shared/sub_header"
     .soto
+    =form_for @item, url: items_path do |f|
       %section.buy-item-container
         #sell-container
           .sell-container-inner
             %h2.l-single-head 商品の情報を入力
             %form.sell-form
               .sell-upload-box
+              =f.fields_for :images do |image|
                 %h3.sell-upload-head
                   / react-text: 7
                   出品画像
@@ -26,7 +28,9 @@
                   .sell-upload-items
                     %ul
                   .sell-upload-drop-box
-                    %input.sell-upload-drop-file{:multiple => "multiple", :name => "image1", :style => "display: none;", :type => "file"}/
+                    =image.file_field :image_url, class: "hidden", onchange: "previewFiles()", multiple: "true"
+
+                    =form_tag "", height: "100px", width: "100px", class: "preview-images"
                     %pre.visible-pc
                       :preserve
                         ドラッグアンドドロップ
@@ -35,50 +39,60 @@
               .sell-content
                 .form-group
                   %label
-                    / react-text: 24
-                    商品名
-                    / /react-text
+                    =f.label :商品名
                     %span.form-require 必須
                   %div
-                    %input.input-default{:placeholder => "商品名（必須 40文字まで)", :value => ""}/
-                  / react-empty: 28
+                    =f.text_field :name, class: "input-default", placeholder: "商品名（必須 40文字まで)"
                 .form-group.setsumei
                   %label
-                    / react-text: 31
-                    商品の説明
-                    / /react-text
-                    / react-text: 32
-                    / /react-text
+                    =f.label :商品の説明
                     %span.form-require 必須
-                  %textarea.textarea-default{:placeholder => "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", :rows => "5"}
-                  / react-empty: 35
+                  %textarea-default
+                    =f.text_area :explain, placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: "5", class: "textarea-default"
           / 詳細
           .sell-content.clearfix
             %h3.sell-sub-head 商品の詳細
             .sell-form-box
               .form-group
                 %label
-                  / react-text: 41
                   カテゴリー
-                  / /react-text
+                  =f.label :lcategories_id, style: "display: none;"
                   %span.form-require 必須
                 %div
                   .select-wrap
-                    %select.select-default
-                      %option{:value => ""} ---
-                      %option{:value => "1"} レディース
-                      %option{:value => "2"} メンズ
-                      %option{:value => "3"} ベビー・キッズ
-                      %option{:value => "4"} インテリア・住まい・小物
-                      %option{:value => "5"} 本・音楽・ゲーム
-                      %option{:value => "1328"} おもちゃ・ホビー・グッズ
-                      %option{:value => "6"} コスメ・香水・美容
-                      %option{:value => "7"} 家電・スマホ・カメラ
-                      %option{:value => "8"} スポーツ・レジャー
-                      %option{:value => "9"} ハンドメイド
-                      %option{:value => "1027"} チケット
-                      %option{:value => "1318"} 自動車・オートバイ
-                      %option{:value => "10"} その他
+                    =f.collection_select :lcategories_id, Lcategory.all, :id, :genre, :prompt => "---", class: "select-default"
+                    %i.icon-arrow-bottom
+              .form-group
+                %label
+                  =f.label :mcategories_id, style: "display: none;"
+                %div
+                  .select-wrap
+                    =f.collection_select :mcategories_id, Mcategory.all, :id, :genre, :prompt => "---", class: "select-default"
+                    %i.icon-arrow-bottom
+              .form-group
+                %label
+                  =f.label :scategories_id, style: "display: none;"
+                %div
+                  .select-wrap
+                    =f.collection_select :scategories_id, Scategory.all, :id, :genre, :prompt => "---", class: "select-default"
+                    %i.icon-arrow-bottom
+              .form-group
+                %label
+                  サイズ
+                  =f.label :size, style: "display: none;"
+                  %span.form-require 必須
+                %div
+                  .select-wrap
+                    =f.select :size, [["XXS以下", "XXS以下"], ["XS(SS)", "XS(SS)"], ["S", "S"], ["M", "M"], ["L", "L"], ["XL(LL)", "XL(LL)"], ["2XL(3L)", "2XL(3L)"], ["3XL(4L)", "3XL(4L)"], ["4XL(5L)以上", "4XL(5L)以上"], ["FREE SIZE", "FREE SIZE"]], :prompt => "---", class: "select-default"
+                    %i.icon-arrow-bottom
+              .form-group
+                %label
+                  ブランド
+                  =f.label :size, style: "display: none;"
+                  %span.form-require 任意
+                %div
+                  .select-wrap
+                    =f.text_field :brands_id, placeholder: "例）シャネル", class: "select-default"
                     %i.icon-arrow-bottom
                 / react-empty: 48
               .form-group
@@ -88,14 +102,7 @@
                   / /react-text
                   %span.form-require 必須
                 .select-wrap
-                  %select.select-default
-                    %option{:value => ""} ---
-                    %option{:value => "1"} 新品、未使用
-                    %option{:value => "2"} 未使用に近い
-                    %option{:value => "3"} 目立った傷や汚れなし
-                    %option{:value => "4"} やや傷や汚れあり
-                    %option{:value => "5"} 傷や汚れあり
-                    %option{:value => "6"} 全体的に状態が悪い
+                  =f.select :condition, [["新品、未使用", "新品、未使用"], ["未使用品に近い", "未使用品に近い"], ["目立った傷や汚れなし", "目立った傷や汚れなし"],["やや傷や汚れあり", "やや傷や汚れあり" ], ["傷や汚れあり", "傷や汚れあり"], ["全体的に状態が悪い", "全体的に状態が悪い"]], :prompt => "---", class: "select-default"
                   %i.icon-arrow-bottom
                 / react-empty: 57
           / 配送
@@ -110,10 +117,7 @@
                   / /react-text
                   %span.form-require 必須
                 .select-wrap
-                  %select.select-default
-                    %option{:value => ""} ---
-                    %option{:value => "2"} 送料込み(出品者負担)
-                    %option{:value => "1"} 着払い(購入者負担)
+                  =f.select :shipping_cost, [["送料込み（出品者負担）", "送料込み（出品者負担)"], ["着払い（購入者負担）","着払い（購入者負担）"]], :prompt => "---", class: "select-default"
                   %i.icon-arrow-bottom
                 / react-empty: 70
               .form-group
@@ -123,56 +127,7 @@
                   / /react-text
                   %span.form-require 必須
                 .select-wrap
-                  %select.select-default
-                    %option{:value => ""} ---
-                    %option{:value => "1"} 北海道
-                    %option{:value => "2"} 青森県
-                    %option{:value => "3"} 岩手県
-                    %option{:value => "4"} 宮城県
-                    %option{:value => "5"} 秋田県
-                    %option{:value => "6"} 山形県
-                    %option{:value => "7"} 福島県
-                    %option{:value => "8"} 茨城県
-                    %option{:value => "9"} 栃木県
-                    %option{:value => "10"} 群馬県
-                    %option{:value => "11"} 埼玉県
-                    %option{:value => "12"} 千葉県
-                    %option{:value => "13"} 東京都
-                    %option{:value => "14"} 神奈川県
-                    %option{:value => "15"} 新潟県
-                    %option{:value => "16"} 富山県
-                    %option{:value => "17"} 石川県
-                    %option{:value => "18"} 福井県
-                    %option{:value => "19"} 山梨県
-                    %option{:value => "20"} 長野県
-                    %option{:value => "21"} 岐阜県
-                    %option{:value => "22"} 静岡県
-                    %option{:value => "23"} 愛知県
-                    %option{:value => "24"} 三重県
-                    %option{:value => "25"} 滋賀県
-                    %option{:value => "26"} 京都府
-                    %option{:value => "27"} 大阪府
-                    %option{:value => "28"} 兵庫県
-                    %option{:value => "29"} 奈良県
-                    %option{:value => "30"} 和歌山県
-                    %option{:value => "31"} 鳥取県
-                    %option{:value => "32"} 島根県
-                    %option{:value => "33"} 岡山県
-                    %option{:value => "34"} 広島県
-                    %option{:value => "35"} 山口県
-                    %option{:value => "36"} 徳島県
-                    %option{:value => "37"} 香川県
-                    %option{:value => "38"} 愛媛県
-                    %option{:value => "39"} 高知県
-                    %option{:value => "40"} 福岡県
-                    %option{:value => "41"} 佐賀県
-                    %option{:value => "42"} 長崎県
-                    %option{:value => "43"} 熊本県
-                    %option{:value => "44"} 大分県
-                    %option{:value => "45"} 宮崎県
-                    %option{:value => "46"} 鹿児島県
-                    %option{:value => "47"} 沖縄県
-                    %option{:value => "99"} 未定
+                  =f.select :area, [["北海道", "北海道"], ["青森県", "青森県"], ["岩手県", "岩手県"], ["宮城県", "宮城県"], ["秋田県", "秋田県"], ["山形県", "山形県"], ["福島県", "福島県"], ["茨城県", "茨城県"], ["栃木県", "栃木県"], ["群馬県", "群馬県"], ["埼玉県", "埼玉県"], ["千葉県", "千葉県"], ["東京都", "東京都"], ["神奈川県", "神奈川県"], ["新潟県", "新潟県"], ["富山県", "富山県"], ["石川県", "石川県"], ["福井県", "福井県"], ["山梨県", "山梨県"],["長野県", "長野県"], ["岐阜県", "岐阜県"], ["静岡県", "静岡県"], ["愛知県", "愛知県"], ["三重県", "三重県"], ["滋賀県", "滋賀県"], ["京都府", "京都府"], ["大阪府", "大阪府"], ["兵庫県", "兵庫県"], ["奈良県", "奈良県"], ["和歌山県", "和歌山県"], ["鳥取県", "鳥取県"], ["島根県", "島根県"],["岡山県", "岡山県"], ["広島県", "広島県"], ["徳島県", "徳島県"], ["香川県", "香川県"], ["愛媛県", "愛媛県"], ["高知県", "高知県"], ["福岡県", "福岡県"], ["佐賀県", "佐賀県"], ["長崎県", "長崎県"], ["熊本県", "熊本県"], ["大分県", "大分県"], ["宮城県", "宮城県"], ["鹿児島県", "鹿児島県"], ["沖縄県", "沖縄県"], ["未定", "未定"]],:prompt => "---", class: "select-default"
                   %i.icon-arrow-bottom
                 / react-empty: 79
               .form-group
@@ -182,11 +137,7 @@
                   / /react-text
                   %span.form-require 必須
                 .select-wrap
-                  %select.select-default
-                    %option{:value => ""} ---
-                    %option{:value => "1"} 1~2日で発送
-                    %option{:value => "2"} 2~3日で発送
-                    %option{:value => "3"} 4~7日で発送
+                  =f.select :shipping_date, [["1~2日で発送", "1~2日で発送"], ["2~3日で発送", "2~3日で発送"], ["4~7日で発送", "4~7日で発送"]],:prompt => "---", class: "select-default"
                   %i.icon-arrow-bottom
                 / react-empty: 88
           / 販売価格
@@ -203,7 +154,7 @@
                     .l-middle ¥
                     .l-right.sell-price-input
                       %div
-                        %input.input-default{:placeholder => "例）300", :value => ""}/
+                        =f.text_field :price, placeholder: "例）300", id: "price-input-form", class: "input-default"
                 %li.clearfix
                   .l-left
                     / react-text: 192
@@ -212,7 +163,7 @@
                   .l-right -
                 %li.clearfix.bold
                   .l-left 販売利益
-                  .l-right -
+                  .l-right.calculation-result -
           .sell-content.sell-btn-box
             %div
               %p
@@ -228,10 +179,8 @@
                 また、出品をもちまして
                 %a{:href => ""}> 加盟店規約
                 に同意したことになります。
-            %button.btn-default.btn-red{:type => "submit"}
-              / react-text: 128
-              出品する
-              / /react-text
+            %button.btn-default
+              =f.submit'出品する', class: "btn-red"
             %a.btn-default.btn-gray もどる
     .footer
       = render "shared/sub_footer"
