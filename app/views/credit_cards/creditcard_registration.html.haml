@@ -11,18 +11,18 @@
               %h3.l-chapter-sub-head-creditcard-regis クレジットカード一覧
           .settings-add-card
             .l-single-content-add-card
-              = link_to "クレジットカードを追加する", destroy_user_session_path, method: :delete, class: "btn-default btn-red submit_button"
+              = link_to "クレジットカードを追加する", credit_cards_creditcard_info_input_path, method: :resources, class: "btn-default btn-red submit_button"
               %i.icon-card
           .settings-not-regist
             %a{href: "/jp/help_center/category/6/", target: "_blank"}
-              %span 支払い方法について
+              %span.setting 支払い方法について
               .i.icon-arrow-right >
 
       .l-side
         .maypage-nav
           %ul.mypage-nav-list
-            %li.mypage-nav-list-each.active
-              = link_to "マイページ", "/mypage", class: "mypage-nav-list-item active"
+            %li.mypage-nav-list-each
+              = link_to "マイページ", "/mypage", class: "mypage-nav-list-item"
               %i.icon-arrow-right
             %li.mypage-nav-list-each
               = link_to "お知らせ", "/", class: "mypage-nav-list-item"
@@ -81,8 +81,8 @@
             %li.mypage-nav-list-each
               = link_to "住所変更", "/", class: "mypage-nav-list-item"
               %i.icon-arrow-right
-            %li.mypage-nav-list-each
-              = link_to "支払い方法", "/mypage/card", class: "mypage-nav-list-item"
+            %li.mypage-nav-list-each.active
+              = link_to "支払い方法", credit_cards_creditcard_registration_path, class: "mypage-nav-list-item active"
               %i.icon-arrow-right
             %li.mypage-nav-list-each
               = link_to "メール/パスワード", "/", class: "mypage-nav-list-item"
