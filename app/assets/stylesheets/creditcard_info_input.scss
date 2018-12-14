@@ -1,0 +1,227 @@
+.main-box{
+  width: 100%;
+  height: 1292px;
+  background-color: #eee;
+ }
+
+  .l-container-creditcard-input.clearfix{
+    width: 1020px;
+    height: 1250px;
+    background-color: #eee;
+    margin: 40px 43px 0 43px;
+    padding: 0 0 40px;
+  }
+
+  .l-content-creditcard-input{
+    float: right;
+    width: 700px;
+    height: 666px;
+    margin: 0;
+    padding: 0;
+    border-width: 0;
+    display: block;
+    background-color: #fff;
+  }
+
+  .l-chapter-container-creditcard-input{
+    margin: 0;
+    background-color: #fff;
+    display: block;
+    height: 588px;
+  }
+
+  .l-chapter-head-creditcard-input{
+    line-height: 1.4;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    padding: 8px 24px;
+    border-bottom: 2px solid #f5f5f5;
+    display: block;
+  }
+
+  .l-single-inner-creditcard-input{
+    height: 700px;
+    width: 616px;
+    display: block;
+    margin: 30px 64px;
+  }
+
+  .l-single-content-creditcard-input{
+    display: block;
+    width: 320px;
+    height: 487px;
+    margin: 0 0 0 100px;
+  }
+
+    .form-group-creditcard{
+      width: 320px;
+      height: 98px;
+      margin: 40px 0 0;
+    }
+
+      .input-default{
+        margin-right: 0px;
+      }
+
+      ul.signup-card-list{
+        width: 350px;
+        height: 20px;
+        margin: 8px 0 0;
+        padding: 0;
+        display: block;
+      }
+
+    .form-group-creditcard-middle{
+      width: 320px;
+      height:126px;
+      margin: 30px 0 0;
+    }
+
+      .select-wrap{
+        display: inline-block;
+        width: 35%;
+        margin: 8px 0 0;
+      }
+
+      .select-default{
+        width: 100%;
+        height: 48px;
+        padding: 0 16px;
+        border: 1px solid #ccc;
+      }
+
+    .form-group-creditcard-bottom{
+      margin: 40px 0 0;
+      width: 320px;
+      height:93px;
+      display: block;
+    }
+
+      .signup-seqcode-crditcard{
+        width: 320px;
+        height: 15px;
+        display: block;
+        position: relative; top: 60px;
+        margin: 8px 0 0 0;
+      }
+
+      .signup-seqcode-text{
+        text-align: right;
+        color: #0099e8;
+        position: relative; bottom: 55px;
+      }
+
+      .btn-default.btn-red{
+        margin: 40px 0  0;
+        position: relative; top: 30px;
+      }
+
+      .signup-seqcode-info{
+        width: 240px;
+        visibility: visible;
+        opacity: 1;
+        border-radius: 6px;
+        background-color: #eee;
+        text-align: center;
+        line-height: 1.5;
+        position: relative; left: 80px; bottom: 50px;
+      }
+
+    .l-side-creditcard{
+      display: block;
+      float: left;
+      width: 280px;
+      margin: 0;
+
+        ul.mypage-nav-list{
+          padding-inline-start: 0px;
+        }
+
+        li.mypage-nav-list-each{
+          border-top: 1px solid #eee;
+          font-size: 13px;
+          height: 45px;
+          background: #fff;
+          list-style: none;
+          display: block;
+          display: flex;
+          align-items: center;
+
+          .mypage-nav-list-item{
+            position: relative;
+            display: block;
+          }
+
+          a{
+            color: #000;
+          }
+        }
+
+        li.mypage-nav-list-each.active{
+          background: #ccc;
+          font-weight: 600;
+          height: 45px;
+          display: block;
+          list-style: none;
+          display: block;
+          display: flex;
+          align-items: center;
+        }
+
+        .mypage-nav-head{
+          margin: 40px 0 4px 0px;
+          width: 280px;
+          font-size: 16px;
+          font-weight: 600;
+        }
+      }
+
+      .bold{
+        font-weight: 600;
+      }
+
+
+      a{
+        text-decoration: none;
+      }
+
+      .mypage-nav-list li:hover{
+        background: #f5f5f5f5;
+      }
+
+      h4{
+        font-size: 24px;
+        padding: 8px 24px;
+        border-bottom: 1px solid #f5f5f5;
+        display: block;
+        text-align: center;
+        background-color: #fff;
+        height: 30px;
+      }
+
+      h3{
+        font-size: 16px;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-weight: bold;
+      }
+
+      label{
+        font-weight: 600;
+      }
+
+      .creditcard_icon_input{
+        height: 20px;
+        width: 29px;
+      }
+
+      input{
+        height: 50px;
+        width: 320px;
+        border-radius:5px;
+        border: 1px solid #C0C0C0;
+        color: black;
+      }

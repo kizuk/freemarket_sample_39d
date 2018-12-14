@@ -1,68 +1,20 @@
-.header
-  = render "shared/header"
-
 %main
-  .l-container.clearfix
-    .l-content
-      .mypage-user-icon
-        %a
-          %figure
-            =image_tag "//static-mercari-jp-imgtr2.akamaized.net/images/member_photo_noimage_thumb.png", size: "60*60", class: "mypic"
-          %h2.bold ユーザー名
-          .mypage-number
-            .evaluation
-              評価
-              .bold 0
-            .solditems
-              出品数
-              .bold 0
-
-      .mypage-tab-container-notification-todo
-        %ul.mypage-tabs
-          %li.mypage-notification.active
-            %h3
-              .change お知らせ
-          %li.mypage-todo
-            %h3
-              .change やることリスト
-        .tab-content
-          %ul.tab-pane.mypage-notification-list.active
-            %li.mypage-item-not-found.bold 現在、お知らせはありません
-          %ul.tab-pane.mypage-todo-list
-            %li.mypage-item-not-found.bold 現在、やることリストはありません
-
-      .adjustment
-      .mypage-tab-container-lower
-        %h2.mypage-tab-head 購入した商品
-        %ul.mypage-tabs-lower
-          %li.mypage-trade-lower.active
-            %h3
-              .change 取引中
-          %li.mypage-past
-            %h3
-              .change 過去の取引
-        .tab-content
-          %ul.tab-pane.mypage-trade-list.active
-            %li.mypage-item-not-found.bold 取引中の商品がありません
-          %ul.tab-pane.mypage-past-list
-            %li.mypage-item-not-found.bold 過去に取引した商品がありません
-
-  .l-container-creditcard-regis.clearfix
-    .l-content-creditcard-regis
-      .l-chapter-container-creditcard-regis
-        %h4.l-chapter-head-creditcard-regis 支払い方法
-        .l-single-inner-creditcard-regis
-          .section-creditcard-regis
-            .l-single-content-creditcard-regis
-              %h3.l-chapter-sub-head-creditcard-regis クレジットカード一覧
-          .settings-add-card
-            .l-single-content-add-card
-              = link_to "クレジットカードを追加する", destroy_user_session_path, method: :delete, class: "btn-default btn-red submit_button"
-              %i.icon-card
-          .settings-not-regist
-            %a{href: "/jp/help_center/category/6/", target: "_blank"}
-              %span 支払い方法について
-              .i.icon-arrow-right >
+  .header
+    = render "shared/header"
+    .l-container.clearfix
+      .l-content
+        .mypage-user-icon
+          %a
+            %figure
+              =image_tag "//static-mercari-jp-imgtr2.akamaized.net/images/member_photo_noimage_thumb.png", size: "60*60", class: "mypic"
+            %h2.bold ユーザー名
+            .mypage-number
+              .evaluation
+                評価
+                .bold 0
+              .solditems
+                出品数
+                .bold 0
 
     .l-side
       .maypage-nav
