@@ -5,4 +5,5 @@ class Item < ApplicationRecord
   has_one :mcategory, dependent: :destroy
   has_one :scategory, dependent: :destroy
   has_one :brand, dependent: :destroy
+  accepts_nested_attributes_for :images
 end
