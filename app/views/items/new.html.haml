@@ -17,27 +17,26 @@
             %h2.l-single-head 商品の情報を入力
             %form.sell-form
               .sell-upload-box
-              =f.fields_for :images do |image|
                 %h3.sell-upload-head
-                  / react-text: 7
                   出品画像
-                  / /react-text
                   %span.form-require 必須
                 %p 最大4枚までアップロードできます
                 .sell-dropbox-container.clearfix
                   .sell-upload-items
                     %ul
                   .sell-upload-drop-box
-                    =image.file_field :image_url, class: "hidden", onchange: "previewFiles()", multiple: "true"
-
-                    =form_tag "", height: "100px", width: "100px", class: "preview-images"
-                    %pre.visible-pc
-                      :preserve
-                        ドラッグアンドドロップ
-                        またはクリックしてファイルをアップロード
-              / 商品名、説明
+                    - 4.times do
+                      .sell-upload-drop-box__small_box
+                        = f.fields_for :images do |image|
+                          = f.label :image do
+                            = image.file_field :image_url, class: 'hidden'
+                            = image_tag "", height: "130", width: "130", class: "preview-images", name: "preview"
+                            %pre.visible-pc
+                              :preserve
+                                クリックしてファイルをアップロード
+                / 商品名、説明
               .sell-content
-                .form-group
+                .form-group-group
                   %label
                     =f.label :商品名
                     %span.form-require 必須
@@ -85,21 +84,18 @@
                   .select-wrap
                     =f.select :size, [["XXS以下", "XXS以下"], ["XS(SS)", "XS(SS)"], ["S", "S"], ["M", "M"], ["L", "L"], ["XL(LL)", "XL(LL)"], ["2XL(3L)", "2XL(3L)"], ["3XL(4L)", "3XL(4L)"], ["4XL(5L)以上", "4XL(5L)以上"], ["FREE SIZE", "FREE SIZE"]], :prompt => "---", class: "select-default"
                     %i.icon-arrow-bottom
+              / .form-group
+              /   %label
+              /     ブランド
+              /     =f.label :size, style: "display: none;"
+              /     %span.form-require 任意
+              /   %div
+              /     .select-wrap
+              /       =f.text_field :brands_id, placeholder: "例）シャネル", class: "select-default"
+              /       %i.icon-arrow-bottom
               .form-group
                 %label
-                  ブランド
-                  =f.label :size, style: "display: none;"
-                  %span.form-require 任意
-                %div
-                  .select-wrap
-                    =f.text_field :brands_id, placeholder: "例）シャネル", class: "select-default"
-                    %i.icon-arrow-bottom
-                / react-empty: 48
-              .form-group
-                %label
-                  / react-text: 51
                   商品の状態
-                  / /react-text
                   %span.form-require 必須
                 .select-wrap
                   =f.select :condition, [["新品、未使用", "新品、未使用"], ["未使用品に近い", "未使用品に近い"], ["目立った傷や汚れなし", "目立った傷や汚れなし"],["やや傷や汚れあり", "やや傷や汚れあり" ], ["傷や汚れあり", "傷や汚れあり"], ["全体的に状態が悪い", "全体的に状態が悪い"]], :prompt => "---", class: "select-default"
