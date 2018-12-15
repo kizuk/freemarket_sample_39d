@@ -2,13 +2,16 @@ Rails.application.routes.draw do
 
 
 devise_for :users
-root 'mains#index'
+root 'items#index'
 
 resources :items, only: [:show, :new, :create]
-get 'users/create' => 'users#create'
-get 'mains/item_sell' => 'mains#item_sell'
-get 'mains/mypage' => 'mains/mypage'
+resources :users, only: [:show]
 
-get 'mains/credit' => 'mains#creditcard_registration'
+get 'users/:id/profile' => 'users#profile'
+get 'items/:id/confirmation' => 'items#confirmation'
+get 'items/:id/buy' => 'items#buy'
+get 'users/:id/card' => 'credit_cards#index'
+get 'users/:id/card/new' => 'credit_cards#new'
+post 'users/:id/card' => 'credit_cards#create'
 
 end

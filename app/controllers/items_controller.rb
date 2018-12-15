@@ -7,4 +7,11 @@ class ItemsController < ApplicationController
 
   def show
   end
+
+  def confimation
+  end
+
+  def buy
+  end
+
 end
