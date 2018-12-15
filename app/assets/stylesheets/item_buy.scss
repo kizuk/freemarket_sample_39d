@@ -1,5 +1,6 @@
 .sot {
   height: 1550px;
+  background-color: #fafafa;
 
 /*発送をお待ちください*/
   .buy-item-container {
@@ -37,6 +38,9 @@
       background-color: #fffde7;
     }
   }
+.buy-content-top-r h3 {
+  margin-top: 0px;
+}
 
 /*画像*/
       .buy-content-item {
@@ -62,7 +66,6 @@
         line-height: 20px;
         .creditcard_icon {
           width: 50px;
-          height: 30px;
           margin-left: 0;
         }
       }
