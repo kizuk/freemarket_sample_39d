@@ -7,4 +7,7 @@ class MainsController < ApplicationController
  def mypage
  end
 
+ def creditcard_registration
+ end
+
 end
