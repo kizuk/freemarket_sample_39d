@@ -9,6 +9,7 @@ resources :users, only: [:show]
 
 get 'users/:id/profile' => 'users#profile'
 get 'items/:id/confirmation' => 'items#confirmation'
+get 'items/:id/item_sell' => 'items#item_sell'
 get 'items/:id/buy' => 'items#buy'
 get 'users/:id/card' => 'credit_cards#index'
 get 'users/:id/card/new' => 'credit_cards#new'
