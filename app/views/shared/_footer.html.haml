@@ -86,7 +86,7 @@
       %img{alt: "mercari", height: "33", src: "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-white.svg?1076135930", width: "124", class: "footer-logo-icon"}/
     %p.footer-copyright
       %small © 2018 Mercari
-%a.footer-sell-btn{href: "/mains/item_sell"}
+%a.footer-sell-btn{href: "/items/#{current_user.id}/item_sell"}
   %div.sell-icon 出品
   %i.icon-camera
     =fa_icon 'camera', class: "camera_icon"
