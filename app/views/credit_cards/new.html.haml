@@ -1,6 +1,5 @@
 .header
   = render "shared/header"
-
 .main-box
   .l-container-creditcard-input.clearfix
     .l-content-creditcard-input
@@ -70,7 +69,6 @@
               %label{for: "payment_card_security_code"} セキュリティコード
               %span.form-require 必須
               %input#input-default-creditcard{:placeholder => "     カード背面4桁もしくは3桁の番号", type: "text", :value => ""}/
-              / %input#payment_card_security_code.input-default{placeholder: "カード背面4桁もしくは3桁の番号", type: "number", value: ""}/
               %ul#security-code-error-wrapper.has-error-text
               .signup-seqcode-crditcard
                 .signup-seqcode-text{"data-js" => "show-tips-toggle"}
@@ -87,7 +85,7 @@
       .maypage-nav
         %ul.mypage-nav-list
           %li.mypage-nav-list-each
-            = link_to "マイページ", "/mypage", class: "mypage-nav-list-item active"
+            = link_to "マイページ", "/users/:id", class: "mypage-nav-list-item active"
             %i.icon-arrow-right
           %li.mypage-nav-list-each
             = link_to "お知らせ", "/", class: "mypage-nav-list-item"
@@ -141,13 +139,13 @@
         %h3.mypage-nav-head 設定
         %ul.mypage-nav-list
           %li.mypage-nav-list-each
-            = link_to "プロフィール", "/mypage/profile", class: "mypage-nav-list-item"
+            = link_to "プロフィール", "/users/:id/profile", class: "mypage-nav-list-item"
             %i.icon-arrow-right
           %li.mypage-nav-list-each
             = link_to "住所変更", "/", class: "mypage-nav-list-item"
             %i.icon-arrow-right
           %li.mypage-nav-list-each.active
-            = link_to "支払い方法", "/mypage/card", class: "mypage-nav-list-item"
+            = link_to "支払い方法", "/users/:id/card", class: "mypage-nav-list-item"
             %i.icon-arrow-right
           %li.mypage-nav-list-each
             = link_to "メール/パスワード", "/", class: "mypage-nav-list-item"
@@ -159,7 +157,7 @@
             = link_to "電話番号の確認", "/", class: "mypage-nav-list-item"
             %i.icon-arrow-right
           %li.mypage-nav-list-each
-            = link_to "ログアウト", "/logout", class: "mypage-nav-list-item"
+            = link_to "ログアウト", "/users/:id/logout", class: "mypage-nav-list-item"
             %i.icon-arrow-right
 
 .footer

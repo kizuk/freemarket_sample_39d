@@ -1,5 +1,6 @@
-%main
-
+.header
+  = render "shared/header"
+.main-box
   .l-container.clearfix
     .l-content
       .mypage-user-icon
@@ -45,29 +46,11 @@
           %ul.tab-pane.mypage-past-list
             %li.mypage-item-not-found.bold 過去に取引した商品がありません
 
-  .header
-    = render "shared/header"
-    .l-container.clearfix
-      .l-content
-        .mypage-user-icon
-          %a
-            %figure
-              =image_tag "//static-mercari-jp-imgtr2.akamaized.net/images/member_photo_noimage_thumb.png", size: "60*60", class: "mypic"
-            %h2.bold ユーザー名
-            .mypage-number
-              .evaluation
-                評価
-                .bold 0
-              .solditems
-                出品数
-                .bold 0
-
-
-    .l-side
+    .l-side-show
       .maypage-nav
         %ul.mypage-nav-list
           %li.mypage-nav-list-each.active
-            = link_to "マイページ", "/mypage", class: "mypage-nav-list-item active"
+            = link_to "マイページ", "/users/:id", class: "mypage-nav-list-item active"
             %i.icon-arrow-right
           %li.mypage-nav-list-each
             = link_to "お知らせ", "/", class: "mypage-nav-list-item"
@@ -121,13 +104,13 @@
         %h3.mypage-nav-head 設定
         %ul.mypage-nav-list
           %li.mypage-nav-list-each
-            = link_to "プロフィール", "/mypage/profile", class: "mypage-nav-list-item"
+            = link_to "プロフィール", "/users/:id/profile", class: "mypage-nav-list-item"
             %i.icon-arrow-right
           %li.mypage-nav-list-each
             = link_to "住所変更", "/", class: "mypage-nav-list-item"
             %i.icon-arrow-right
           %li.mypage-nav-list-each
-            = link_to "支払い方法", "mains/creditcard_registration", class: "mypage-nav-list-item"
+            = link_to "支払い方法", "/users/:id/card", class: "mypage-nav-list-item"
             %i.icon-arrow-right
           %li.mypage-nav-list-each
             = link_to "メール/パスワード", "/", class: "mypage-nav-list-item"
@@ -139,7 +122,7 @@
             = link_to "電話番号の確認", "/", class: "mypage-nav-list-item"
             %i.icon-arrow-right
           %li.mypage-nav-list-each
-            = link_to "ログアウト", "/logout", class: "mypage-nav-list-item"
+            = link_to "ログアウト", "/users/:id/logout", class: "mypage-nav-list-item"
             %i.icon-arrow-right
 
 .footer

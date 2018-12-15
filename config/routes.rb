@@ -14,5 +14,6 @@ get 'items/:id/buy' => 'items#buy'
 get 'users/:id/card' => 'credit_cards#index'
 get 'users/:id/card/new' => 'credit_cards#new'
 post 'users/:id/card' => 'credit_cards#create'
+get 'users/:id/logout' => 'users#logout'
 
 end
