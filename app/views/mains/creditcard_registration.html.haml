@@ -1,0 +1,101 @@
+.header
+  = render "shared/header"
+
+  .l-container-creditcard-regis.clearfix
+    .l-content-creditcard-regis
+      .l-chapter-container-creditcard-regis
+        %h4.l-chapter-head-creditcard-regis 支払い方法
+        .l-single-inner-creditcard-regis
+          .section-creditcard-regis
+            .l-single-content-creditcard-regis
+              %h3.l-chapter-sub-head-creditcard-regis クレジットカード一覧
+          .settings-add-card
+            .l-single-content-add-card
+              = link_to "クレジットカードを追加する", destroy_user_session_path, method: :delete, class: "btn-default btn-red submit_button"
+              %i.icon-card
+          .settings-not-regist
+            %a{href: "/jp/help_center/category/6/", target: "_blank"}
+              %span 支払い方法について
+              .i.icon-arrow-right >
+
+      .l-side
+        .maypage-nav
+          %ul.mypage-nav-list
+            %li.mypage-nav-list-each
+              = link_to "マイページ", "/mypage", class: "mypage-nav-list-item"
+              %i.icon-arrow-right
+            %li.mypage-nav-list-each
+              = link_to "お知らせ", "/", class: "mypage-nav-list-item"
+              %i.icon-arrow-right
+            %li.mypage-nav-list-each
+              = link_to "やることリスト", "/", class: "mypage-nav-list-item"
+              %i.icon-arrow-right
+            %li.mypage-nav-list-each
+              = link_to "いいね！一覧", "/", class: "mypage-nav-list-item"
+              %i.icon-arrow-right
+            %li.mypage-nav-list-each
+              = link_to "出品する", "/", class: "mypage-nav-list-item"
+              %i.icon-arrow-right
+            %li.mypage-nav-list-each
+              = link_to "出品した商品 - 出品中", "/", class: "mypage-nav-list-item"
+              %i.icon-arrow-right
+            %li.mypage-nav-list-each
+              = link_to "出品した商品 - 取引中", "/", class: "mypage-nav-list-item"
+              %i.icon-arrow-right
+            %li.mypage-nav-list-each
+              = link_to "出品した商品 - 売却済み", "/", class: "mypage-nav-list-item"
+              %i.icon-arrow-right
+            %li.mypage-nav-list-each
+              = link_to "購入した商品 - 取引中", "/", class: "mypage-nav-list-item"
+              %i.icon-arrow-right
+            %li.mypage-nav-list-each
+              = link_to "購入した商品 - 過去の取引", "/", class: "mypage-nav-list-item"
+              %i.icon-arrow-right
+            %li.mypage-nav-list-each
+              = link_to "ニュース一覧", "/", class: "mypage-nav-list-item"
+              %i.icon-arrow-right
+            %li.mypage-nav-list-each
+              = link_to "評価一覧", "/", class: "mypage-nav-list-item"
+              %i.icon-arrow-right
+            %li.mypage-nav-list-each
+              = link_to "ガイド", "/", class: "mypage-nav-list-item"
+              %i.icon-arrow-right
+            %li.mypage-nav-list-each
+              = link_to "お問い合わせ", "/", class: "mypage-nav-list-item"
+              %i.icon-arrow-right
+
+          %h3.mypage-nav-head 売上・ポイント
+          %ul.mypage-nav-list
+            %li.mypage-nav-list-each
+              = link_to "売上・振込申請", "/", class: "mypage-nav-list-item"
+              %i.icon-arrow-right
+            %li.mypage-nav-list-each
+              = link_to "ポイント", "/", class: "mypage-nav-list-item"
+              %i.icon-arrow-right
+
+          %h3.mypage-nav-head 設定
+          %ul.mypage-nav-list
+            %li.mypage-nav-list-each
+              = link_to "プロフィール", "/mypage/profile", class: "mypage-nav-list-item"
+              %i.icon-arrow-right
+            %li.mypage-nav-list-each
+              = link_to "住所変更", "/", class: "mypage-nav-list-item"
+              %i.icon-arrow-right
+            %li.mypage-nav-list-each.active
+              = link_to "支払い方法", "/mypage/card", class: "mypage-nav-list-item active"
+              %i.icon-arrow-right
+            %li.mypage-nav-list-each
+              = link_to "メール/パスワード", "/", class: "mypage-nav-list-item"
+              %i.icon-arrow-right
+            %li.mypage-nav-list-each
+              = link_to "本人情報", "/", class: "mypage-nav-list-item"
+              %i.icon-arrow-right
+            %li.mypage-nav-list-each
+              = link_to "電話番号の確認", "/", class: "mypage-nav-list-item"
+              %i.icon-arrow-right
+            %li.mypage-nav-list-each
+              = link_to "ログアウト", "/logout", class: "mypage-nav-list-item"
+              %i.icon-arrow-right
+
+  .footer
+  = render "shared/footer"
