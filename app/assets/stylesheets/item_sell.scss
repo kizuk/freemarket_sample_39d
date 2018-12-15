@@ -121,6 +121,11 @@ h3 {
     line-height: 1.5;
 }
 
+
+.upload-text {
+  text-align: left;
+}
+
 /*出品画像*/
 .sell-upload-box {
     width: 620px;
@@ -305,16 +310,13 @@ textarea {
     }
 }
 
-.sell-btn-box .btn-red {
+.sell-btn-box .btn-red2 {
     margin: 40px 0 0;
 }
-.btn-red {
+.btn-red2 {
     background: #ea352d;
     border: 1px solid #ea352d;
     color: #fff;
-    position: relative;
-    top: 0px;
-
 }
 .btn-default {
     display: block;

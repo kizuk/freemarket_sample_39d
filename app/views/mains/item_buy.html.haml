@@ -1,5 +1,5 @@
-/ .header
-/   = render "shared/sub_header"
+.header
+  = render "shared/sub_header"
 .sot
   %section.buy-item-container
     / 発送お待ち下さい
@@ -44,7 +44,7 @@
           12/04
           %br/
           .creditcard-image
-            = image_tag '1.png', class: "creditcard_icon"
+            = image_tag 'visa.png', class: "creditcard_icon"
       .buy-content
         %h3 発送通知後の流れ
         .buy-content-icon
@@ -66,5 +66,5 @@
             = succeed "\u{30de}\u{30a4}\u{30da}\u{30fc}\u{30b8}\u{3078}\u{3082}\u{3069}\u{308b}" do
               %br/
 
-/ .footer
-/   = render "shared/sub_footer"
+.footer
+  = render "shared/sub_footer"
