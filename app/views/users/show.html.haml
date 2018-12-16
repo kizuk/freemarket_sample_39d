@@ -1,18 +1,56 @@
 .header
   = render "shared/header"
+.main-box
+  .l-container.clearfix
+    .l-content
+      .mypage-user-icon
+        %a
+          %figure
+            =image_tag "//static-mercari-jp-imgtr2.akamaized.net/images/member_photo_noimage_thumb.png", size: "60*60", class: "mypic"
+          %h2.bold ユーザー名
+          .mypage-number
+            .evaluation
+              評価
+              .bold 0
+            .solditems
+              出品数
+              .bold 0
 
-  .l-contianer-logout.clearfix
-    .l-content-logout-box
-      .l-chapter-container-logout
-        .l-single-inner-logout
-          .l-single-content-logout
-            = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn-default btn-red"
+      .mypage-tab-container-notification-todo
+        %ul.mypage-tabs
+          %li.mypage-notification.active
+            %h3
+              .change お知らせ
+          %li.mypage-todo
+            %h3
+              .change やることリスト
+        .tab-content
+          %ul.tab-pane.mypage-notification-list.active
+            %li.mypage-item-not-found.bold 現在、お知らせはありません
+          %ul.tab-pane.mypage-todo-list
+            %li.mypage-item-not-found.bold 現在、やることリストはありません
 
-    .l-side
+      .adjustment
+      .mypage-tab-container-lower
+        %h2.mypage-tab-head 購入した商品
+        %ul.mypage-tabs-lower
+          %li.mypage-trade-lower.active
+            %h3
+              .change 取引中
+          %li.mypage-past
+            %h3
+              .change 過去の取引
+        .tab-content
+          %ul.tab-pane.mypage-trade-list.active
+            %li.mypage-item-not-found.bold 取引中の商品がありません
+          %ul.tab-pane.mypage-past-list
+            %li.mypage-item-not-found.bold 過去に取引した商品がありません
+
+    .l-side-show
       .maypage-nav
         %ul.mypage-nav-list
           %li.mypage-nav-list-each.active
-            = link_to "マイページ", "/mypage", class: "mypage-nav-list-item active"
+            = link_to "マイページ", "/users/:id", class: "mypage-nav-list-item active"
             %i.icon-arrow-right
           %li.mypage-nav-list-each
             = link_to "お知らせ", "/", class: "mypage-nav-list-item"
@@ -66,13 +104,13 @@
         %h3.mypage-nav-head 設定
         %ul.mypage-nav-list
           %li.mypage-nav-list-each
-            = link_to "プロフィール", "/mypage/profile", class: "mypage-nav-list-item"
+            = link_to "プロフィール", "/users/:id/profile", class: "mypage-nav-list-item"
             %i.icon-arrow-right
           %li.mypage-nav-list-each
             = link_to "住所変更", "/", class: "mypage-nav-list-item"
             %i.icon-arrow-right
           %li.mypage-nav-list-each
-            = link_to "支払い方法", "/mypage/card", class: "mypage-nav-list-item"
+            = link_to "支払い方法", "/users/:id/card", class: "mypage-nav-list-item"
             %i.icon-arrow-right
           %li.mypage-nav-list-each
             = link_to "メール/パスワード", "/", class: "mypage-nav-list-item"
@@ -84,8 +122,8 @@
             = link_to "電話番号の確認", "/", class: "mypage-nav-list-item"
             %i.icon-arrow-right
           %li.mypage-nav-list-each
-            = link_to "ログアウト", "/logout", class: "mypage-nav-list-item"
+            = link_to "ログアウト", "/users/:id/logout", class: "mypage-nav-list-item"
             %i.icon-arrow-right
 
 .footer
-  = render "shared/footer"
+= render "shared/footer"

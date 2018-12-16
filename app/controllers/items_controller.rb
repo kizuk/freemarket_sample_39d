@@ -21,9 +21,17 @@ class ItemsController < ApplicationController
   def show
   end
 
+  def confimation
+  end
+
+  def buy
+  end
+
   private
   def item_params
     params.require(:item).permit(:name, :explain, :lcategories_id, :mcategories_id, :scategories_id, :brands_id, :size, :condition, :shipping_cost, :area, :shipping_date,:price, images_attributes: [:image_url]).merge(user_id: current_user.id)
   end
+
+
 end
 

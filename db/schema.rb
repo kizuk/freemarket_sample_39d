@@ -18,6 +18,16 @@ ActiveRecord::Schema.define(version: 2018_12_14_235055) do
     t.datetime "updated_at"
   end
 
+  create_table "credit_cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "number"
+    t.integer "expire"
+    t.integer "security"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_credit_cards_on_user_id"
+  end
+
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "image_url"
     t.bigint "item_id"
@@ -89,4 +99,6 @@ ActiveRecord::Schema.define(version: 2018_12_14_235055) do
   add_foreign_key "items", "users"
   add_foreign_key "mcategories", "lcategories", column: "lcategories_id"
   add_foreign_key "scategories", "mcategories", column: "mcategories_id"
+  add_foreign_key "credit_cards", "users"
+
 end

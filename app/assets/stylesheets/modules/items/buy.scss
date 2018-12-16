@@ -1,0 +1,104 @@
+.sot {
+  height: 1550px;
+  background-color: #fafafa;
+
+/*発送をお待ちください*/
+  .buy-item-container {
+    height: 1550px;
+    width: 700px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-style: solid;
+    border-width: 0;
+    font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+    text-align: center;
+
+    .buy-content {
+      padding: 40px;
+      border-top: 1px solid #eee;
+      margin: 0;
+      display: block;
+      &-top {
+        color: red;
+        margin: 0 auto;
+        width: 35%;
+
+        &-l {
+          float: left;
+        }
+        &-r {
+          float: left;
+          line-height: 27px;
+          margin-left: 10px;
+          margin-top: 9px;
+        }
+      }
+    }
+    .first {
+      background-color: #fffde7;
+    }
+  }
+.buy-content-top-r h3 {
+  margin-top: 0px;
+}
+
+/*画像*/
+      .buy-content-item {
+        margin: 16px 0 0;
+        &-photo {
+            min-width: 280px;
+            max-width: 360px;
+            min-height: 280px;
+            margin: 0 auto;
+            background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSW6JrfrRXOfvcvOoXME87FFtDfyLTAHU1vUpa-Hwi3M9NJzC9F");
+            background-size: cover;
+        }
+        &-name {
+            margin: 24px 0 60px 0;
+        }
+      }
+
+// 支払い方法
+      .sub-content {
+        max-width: 60%;
+        text-align: left;
+        margin: 0 auto;
+        line-height: 20px;
+        .creditcard_icon {
+          width: 50px;
+          margin-left: 0;
+        }
+      }
+
+/*発送通知後のながれ*/
+      .buy-content-icon {
+        margin: 0 auto;
+        width: 20%;
+        height: 30px;
+        .fas {
+          margin: 4px;
+        }
+        .fa-stars {
+          color: #fff176;
+        }
+        .fa-grin {
+          color: #ff4081;
+        }
+        .fa-meh {
+          color: #ffca28;
+        }
+        .fa-frown {
+          color: #00b0ff;
+        }
+      }
+      .content-text-line-height{
+        line-height: 20px;
+        margin-top: 20px;
+      }
+}
+
+
+  .buy-conf-container {
+    height: 900px;
+    background-color: red;
+  }

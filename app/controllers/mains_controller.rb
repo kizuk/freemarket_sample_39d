@@ -3,8 +3,7 @@ class MainsController < ApplicationController
  def index
  end
 
-
- def mypage
+ def show
  end
 
 end
