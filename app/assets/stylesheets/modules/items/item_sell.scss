@@ -131,6 +131,7 @@ h3 {
     width: 620px;
     padding: 40px;
     border-top: 1px solid #f5f5f5;
+    float: left;
 }
 /*ドラッグ&ドロップ*/
 .sell-dropbox-container {
@@ -139,17 +140,17 @@ h3 {
     margin-top: 10px;
 }
 .sell-upload-drop-box {
+  @include clearfix();
   float: none;
   margin: 0;
   min-height: 184px;
-  padding: 40px;
+  padding: 0;
   -webkit-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
   position: relative;
   min-height: 116px;
-  background: #f5f5f5;
-  border: 1px dashed #ccc;
+  background: #fff;
   font-size: 0;
   text-align: center;
   -webkit-transition: -webkit-box-shadow ease-out .3s;
@@ -157,6 +158,17 @@ h3 {
   transition: box-shadow ease-out .3s;
   transition: box-shadow ease-out .3s, -webkit-box-shadow ease-out .3s;
   cursor: pointer;
+  &__small_box {
+    width: 140px;
+    min-height: 184px;
+    display: inline-block;
+    float: left;
+    background: #f5f5f5;
+    border: 1px dashed #ccc;
+    font-size: 0;
+    text-align: center;
+    margin-right: 12px;
+  }
 }
 .sell-upload-drop-box pre {
     position: absolute;
@@ -341,7 +353,4 @@ textarea {
     margin-bottom: 40px;
 }
 
-
-
-
-
+master:app/assets/stylesheets/modules/items/item_sell.scss
