@@ -95,10 +95,9 @@ ActiveRecord::Schema.define(version: 2018_12_14_235055) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "credit_cards", "users"
   add_foreign_key "images", "items"
   add_foreign_key "items", "users"
   add_foreign_key "mcategories", "lcategories", column: "lcategories_id"
   add_foreign_key "scategories", "mcategories", column: "mcategories_id"
-  add_foreign_key "credit_cards", "users"
-
 end
