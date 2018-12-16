@@ -2,38 +2,41 @@
   .pc-header__inner
     .pc-header__inner__clearfix
       %h1.l-left
-        %a{href: "https://www.mercari.com/jp/"}
+        %a{href: "/"}
           %img{alt: "mercari", height: "36", src: "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?1076135930", width: "134"}/
       %form.pc-header-form.l-right{action: "https://www.mercari.com/jp/search/"}
-        %input.input-default{name: "keyword", placeholder: "キーワードから探す", type: "search", value: ""}/
+        %input.input-default-header{name: "keyword", placeholder: "キーワードから探す", type: "search", value: ""}/
         %i.icon-search
           =fa_icon'search', class: "search_icon"
     .pc-header__nav-box.clearfix
       %nav.l-left
         %ul.pc-header-nav
           %li
-            %h2
-              %a.pc-header-nav-root{href: "https://www.mercari.com/jp/category/"} カテゴリーから探す
+            %a.pc-header-nav-root{href: "https://www.mercari.com/jp/category/"} カテゴリーから探す
           %li
-            %h2
-              %a.pc-header-nav-root{href: "https://www.mercari.com/jp/brand/"} ブランドから探す
-      .nav.l-right-mypage
-        %ul.pc-header-user-nav
-          %li.mypage-link
-            %figure.user-icon
-              .user-icon-picture
-                %img{alt: "", src: "//static-mercari-jp-imgtr2.akamaized.net/thumb/members/636140400.jpg?1531754660",width: "32"}/
-            %span.mypage マイページ
+            %a.pc-header-nav-root{href: "https://www.mercari.com/jp/brand/"} ブランドから探す
 
+      - if user_signed_in?
+        .nav.l-right-mypage
+          %ul.pc-header-user-nav
+            %li.mypage-link
+          %figure.user-icon
+            %img.user-icon-picture{alt: "", src: "//static-mercari-jp-imgtr2.akamaized.net/thumb/members/636140400.jpg?1531754660",width: "32"}/
+            %a{href: "/users/#{current_user.id}"}
+              %span.mypage マイページ
           %li.notice
-            %i.far.fa-bell
-            %span.notice__item お知らせ
+            %a{ href: "/"}
+              %i.far.fa-bell
+              %span.notice__item お知らせ
 
           %li.todo
-            =fa_icon 'check', class: "check_icon"
-            %span やることリスト
-          %li.todo
-            = link_to "ログアウト",destroy_user_session_path, method: :delete
+            %a{ href: "/"}
+              =fa_icon 'check', class: "check_icon"
+              %span やることリスト
 
-
-
+      - else
+        %ul.pc-header-login-nav
+          %li
+            = link_to "ログイン", new_user_session_path, class: "header-btn btn-red-login"
+          %li
+            = link_to"新規会員登録", new_user_registration_path, class: "header-btn header-signup"

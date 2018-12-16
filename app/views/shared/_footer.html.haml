@@ -5,7 +5,7 @@
         %h2.footer-head メルカリについて
         %ul
           %li.first-child
-            %a{href: "https://about.mercari.com/", class: "contents-list-link"} 会社概要（運営会社）
+            %a{href: "/", class: "contents-list-link"} 会社概要（運営会社）
           %li.contents-list
             %a{href:"https://www.mercari.com/jp/privacy/", class: "contents-list-link"} プライバシーポリシー
           %li.contents-list
@@ -70,7 +70,7 @@
         %h2.footer-head 国
         %ul.footer-nav-lang
           %li.first-child
-            %a{href: "https://www.mercari.com/", class: "contents-list-link"}
+            %a{href: "/", class: "contents-list-link"}
               %img{alt: "", src: "//www-mercari-jp.akamaized.net/assets/img/common/common/flag_us.png?1076135930", width: "22"}>/
               United States
           %li.contents-list
@@ -78,15 +78,28 @@
               %img{alt: "", src: "//www-mercari-jp.akamaized.net/assets/img/common/common/flag_uk.png?1076135930", width: "22"}>/
               United Kingdom
           %li.contents-list
-            %a.active{href: "https://www.mercari.com/jp/", class: "contents-list-link"}
+            %a.active{href: "/", class: "contents-list-link"}
               %img{alt: "", src: "//www-mercari-jp.akamaized.net/assets/img/common/common/flag_jp.png?1076135930", width: "22"}>/
               日本
   .footer-bottom-box
-    %a.footer-logo{href: "https://www.mercari.com/jp/"}
+    %a.footer-logo{href: "/"}
       %img{alt: "mercari", height: "33", src: "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-white.svg?1076135930", width: "124", class: "footer-logo-icon"}/
     %p.footer-copyright
       %small © 2018 Mercari
-%a.footer-sell-btn{href: "/items/#{current_user.id}/item_sell"}
-  %div.sell-icon 出品
-  %i.icon-camera
-    =fa_icon 'camera', class: "camera_icon"
+
+
+
+- if user_signed_in?
+  %a.footer-sell-btn{ href: "/items/#{current_user.id}/item_sell"}
+    .sell-icon 出品
+    %i.fas.fa-camera
+- else
+  %a.footer-sell-btn{ href: "/users/sign_in"}
+    .sell-icon 出品
+    %i.fas.fa-camera
+
+
+
+
+
+
