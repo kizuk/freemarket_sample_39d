@@ -1,8 +1,3 @@
-html, body {
-  width: 100%;
-  height: 100%;
-}
-
 .default-container {
   width: 100%;
   height: 5339px;
@@ -10,7 +5,7 @@ html, body {
 }
 
 .pc-header.visible-pc {
-  height: 110px;
+  // height: 110px;
   position: relative;
   z-index: 1001;
   background-color: #fff;
@@ -19,7 +14,7 @@ html, body {
 .pc-header__inner {
    width: 1020px;
    margin: 0 auto;
-   padding: 8px 0 0;
+   padding-top: 8px;
    background-color: #fff;
 
   &__clearfix {
@@ -27,6 +22,11 @@ html, body {
     width: 1020px;
     height: 36px;
   }
+}
+
+
+.pc-header__nav-box i {
+  margin-top: 8px;
 }
 
 h1.l-left {
@@ -41,7 +41,7 @@ h1.l-left {
   font-size: 14px;
   line-height: 1;
   }
-.input-default {
+.input-default-header {
   width: 100%;
   height: 36px;
   padding: 9px 32px 9px 8px;
@@ -51,11 +51,11 @@ h1.l-left {
   line-height: 1.5;
   font-size: 16px;
 }
+
 .icon-search {
   position: absolute;
   top: 0;
   right: 0;
-  width: 36px;
   line-height: 36px;
   cursor: pointer;
   text-align: center;
@@ -65,22 +65,28 @@ h1.l-left {
   font-weight: 400;
   font-size: 14px;
 }
-
 .search_icon {
-  font-size: 13px;
+  font-size: 14px;
   color: dimgray;
+  margin-top: 6px;
+
   // -webkit-text-stroke: 0.2rem white;
 }
 
 .pc-header__nav-box {
   @include clearfix();
-  width: 1020px;
+  width: 1050px;
   margin: 8px 0 0;
   padding: 0;
   font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
   font-size: 14px;
   line-height: 1;
 }
+
+ul.pc-header-user-nav a {
+  color: black;
+}
+
 
 nav.l-left{
   float: left;
@@ -115,8 +121,14 @@ li {
   line-height: 1;
   float: right;
 }
+
+.l-right-mypage a {
+  color: black;
+}
+
+
 .pc-header-user-nav{
-  width: 366px;
+  width: 400px;
   display: block;
   float: right;
 }
@@ -126,43 +138,40 @@ li {
   display: inline-block;
   width: 113px;
   padding: 0 0 0 16px;
-  float: left;
+  float: right;
 }
 
 .user-icon {
   display: inline-block;
-  position: relative;
+  // position: relative;
   font-size: 14px;
-  width: 32px;
+  // width: 32px;
   float: left;
   margin: 0 auto;
-  vertical-align: middle;
+  // vertical-align: middle;
+
 }
 
 .user-icon-picture{
+    width: 32px;
     overflow: hidden;
     border-radius: 50%;
+    float: left;
 }
 
 .mypage {
-  text-decoration: none;
-  position: inline-block;
   line-height: 34px;
   float: left;
+  margin-left: 5px;
 }
-.notice {
-  display: inline-block;
-  width: 78px;
-  float: left;
-  line-height: 34px;
 
+.notice {
+  width: 85px;
+  line-height: 34px;
 }
 .todo {
-  display: inline-block;
-  text-decoration: none;
-  width: 127px;
+  width: 135px;
   line-height: 34px;
-  float: left;
 }
 
 .fa-bell {
@@ -181,4 +190,32 @@ li {
 }
 
 
+// ログインしていない時の表示ボタン
+.pc-header-login-nav {
+  width: 250px;
+  height: 32px;
+  float: right;
+  line-height: 30px;
+}
+
+.header-btn {
+  height: 30px;
+  display: inline-block;
+  padding: 0 10px;
+  border-radius: 4px;
+  text-align: center;
+  line-height: 30px;
+}
+.btn-red-login {
+  background: #ea352d;
+  border: 1px solid #ea352d;
+  color: #fff;
+  margin-right: 0px;
+}
+.header-signup {
+  border: 1px solid #0099e8;
+  background: #fff;
+  color: #0099e8;
+  margin-right: 30px;
+}
 

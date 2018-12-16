@@ -1,7 +1,3 @@
-html, body {
-  height: 100%;
-}
-
 .white {
   width: 100%;
   height: 4500px;
@@ -137,11 +133,11 @@ img.is-higher-width {
   overflow: hidden;
   position: relative;
   font-weight: 400;
-  height: 3em;
+  // height: 3em;
   line-height: 1.5;
   font-size: 16px;
-  text-decoration: none;
   color: black;
+  margin: 0;
 }
 
 .items-box-num {

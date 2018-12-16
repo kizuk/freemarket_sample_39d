@@ -41,7 +41,7 @@
                     =f.label :商品名
                     %span.form-require 必須
                   %div
-                    =f.text_field :name, class: "input-default", placeholder: "商品名（必須 40文字まで)"
+                    =f.text_field :name, class: "input-default-header", placeholder: "商品名（必須 40文字まで)"
                 .form-group.setsumei
                   %label
                     =f.label :商品の説明
@@ -150,7 +150,7 @@
                     .l-middle ¥
                     .l-right.sell-price-input
                       %div
-                        =f.text_field :price, placeholder: "例）300", id: "price-input-form", class: "input-default"
+                        =f.text_field :price, placeholder: "例）300", id: "price-input-form", class: "input-default-header"
                 %li.clearfix
                   .l-left
                     / react-text: 192
