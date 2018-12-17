@@ -13,15 +13,11 @@ $(function() {
 // 選択した画像のプレビュー表示
   $('input[type="file"]').on('change', function(){
     var len = $(this).prop('files');
-    console.log(len);
     for (var i = 0; i < len; i++) {
-      console.log(i);
      var file = $(this).target.files[i],
          find_img = $(this).parent().find('img'),
          filereader = new FileReader(),
          preview = $(".preview ul");
-     console.log(file);
-     console.log(find_img);
 
     if(find_img.length){
        find_img.nextAll().remove();
