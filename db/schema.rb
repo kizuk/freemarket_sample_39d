@@ -29,58 +29,50 @@ ActiveRecord::Schema.define(version: 2018_12_14_235055) do
   end
 
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "image_url"
-    t.bigint "item_id"
+    t.string "image_url", null: false
+    t.bigint "item_id", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["item_id"], name: "index_images_on_item_id"
   end
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
-    t.text "explain"
+    t.string "name", null: false
+    t.text "explain", null: false
     t.string "size"
-    t.string "condition"
-    t.string "shipping_cost"
-    t.string "area"
-    t.integer "price"
-    t.string "status"
+    t.string "condition", null: false
+    t.string "shipping_cost", null: false
+    t.string "area", null: false
+    t.integer "price", null: false
+    t.string "status", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.bigint "lcategories_id"
-    t.bigint "mcategories_id"
-    t.bigint "scategories_id"
-    t.bigint "brands_id"
     t.bigint "user_id"
     t.string "shipping_date"
-    t.index ["brands_id"], name: "index_items_on_brands_id"
-    t.index ["lcategories_id"], name: "index_items_on_lcategories_id"
-    t.index ["mcategories_id"], name: "index_items_on_mcategories_id"
     t.index ["name"], name: "index_items_on_name"
-    t.index ["scategories_id"], name: "index_items_on_scategories_id"
     t.index ["user_id"], name: "index_items_on_user_id"
   end
 
-  create_table "lcategories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "l_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "genre"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "mcategories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "m_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "genre"
-    t.bigint "lcategories_id"
+    t.bigint "l_categories_id", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.index ["lcategories_id"], name: "index_mcategories_on_lcategories_id"
+    t.index ["l_categories_id"], name: "index_m_categories_on_l_categories_id"
   end
 
-  create_table "scategories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "s_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "genre"
-    t.bigint "mcategories_id"
+    t.bigint "m_categories_id", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.index ["mcategories_id"], name: "index_scategories_on_mcategories_id"
+    t.index ["m_categories_id"], name: "index_s_categories_on_m_categories_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

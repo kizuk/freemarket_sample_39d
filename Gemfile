@@ -82,3 +82,6 @@ gem 'pry-doc'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog-aws'
+gem 'jquery-rails'
+gem 'payjp'
+

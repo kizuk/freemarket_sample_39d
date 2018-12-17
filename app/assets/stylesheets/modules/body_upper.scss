@@ -1,5 +1,4 @@
 body {
-  min-height: 2000px;
   background-color: #f5f5f5;
   font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
   line-height: 1;
@@ -24,7 +23,7 @@ img { vertical-align: bottom;}
 
 .item-main-content {
   @include clearfix();
-  margin: 16px 0 0;
+  // margin: 16px 0 0;
 }
 
 .item-photo {

@@ -1,29 +1,28 @@
-%body
-  .header
-  = render "shared/sub_header"
+.header
+= render "shared/sub_header"
 
-  %main.login-main
-    .login-no-account
-      %p アカウントをお持ちでない方はこちら
-      %a.new-account{href: "/users/create"} 新規会員登録
+%main.login-main
+  .login-no-account
+    %p アカウントをお持ちでない方はこちら
+    %a.new-account{href: "/users/sign_up"} 新規会員登録
+  .login-form
+    %button#facebook-login.btn-sns
+      %i.fab.fa-facebook.fa-2x
+      Facebookでログイン
+    %button#google-login.btn-sns
+      %i.fab.fa-google-plus-g.fa-2x
+      Googleでログイン
     .login-form
-      %button#facebook-login.btn-sns
-        %i.fab.fa-facebook.fa-2x
-        Facebookでログイン
-      %button#google-login.btn-sns
-        %i.fab.fa-google-plus-g.fa-2x
-        Googleでログイン
-      .login-form
-        = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-          .field
-            .field-input.login-input
-              = f.email_field :email, autofocus: true, placeholder: "  メールアドレス"
-          .field
-            .field-input.login-input
-              = f.password_field :password, autocomplete: "off", placeholder: "  パスワード"
-          .actions
-            = f.submit "ログイン", class: 'btn',href: "/"
-    %a.lost-password{href: "/"} パスワードをお忘れの方
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        .field
+          .field-input.login-input
+            = f.email_field :email, autofocus: true, placeholder: "  メールアドレス"
+        .field
+          .field-input.login-input
+            = f.password_field :password, autocomplete: "off", placeholder: "  パスワード"
+        .actions
+          = f.submit "ログイン", class: 'btn',href: "/"
+  %a.lost-password{href: "/"} パスワードをお忘れの方
 
-  .footer.sub_footer
-  = render "shared/sub_footer"
+.footer.sub_footer
+= render "shared/sub_footer"
