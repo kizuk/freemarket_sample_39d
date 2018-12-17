@@ -75,15 +75,6 @@ group :production do
 end
 
 gem 'devise'
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-
-gem 'jquery-rails'
-
-
-=======
->>>>>>> Stashed changes
 gem 'mechanize'
 gem 'pry-rails'
 gem 'pry-byebug'
@@ -91,7 +82,3 @@ gem 'pry-doc'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog-aws'
-<<<<<<< Updated upstream
-=======
->>>>>>> origin/master
->>>>>>> Stashed changes
