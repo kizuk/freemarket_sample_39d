@@ -11,28 +11,34 @@ $(function() {
   });
 
 // 選択した画像のプレビュー表示
-  $(document).ready(function () {
-  $(".hidden").on('change', function(){
-     var fileprop = $(this).prop('files')[0],
+  $('input[type="file"]').on('change', function(){
+    var len = $(this).prop('files');
+    console.log(len);
+    for (var i = 0; i < len; i++) {
+      console.log(i);
+     var file = $(this).target.files[i],
          find_img = $(this).parent().find('img'),
          filereader = new FileReader(),
-         view_box = $(this).parent('.sell-upload-drop-box__small_box');
+         preview = $(".preview ul");
+     console.log(file);
+     console.log(find_img);
 
     if(find_img.length){
        find_img.nextAll().remove();
        find_img.remove();
     }
 
-    var img = '<div class="img_view"><img alt="" class="img"><p><a href="#" class="img_del">画像を削除する</a></p></div>';
+    var img = '<li class="img_view"><img alt="" class="img_preview"><p><a href="#" class="img_del">画像を削除する</a></p></li>';
 
-    view_box.append(img);
+    preview.append(img);
 
     filereader.onload = function() {
-      view_box.find('img').attr('src', filereader.result);
-      img_del(view_box);
+      preview.find('img').attr('src', filereader.result);
+      img_del(preview);
+      $(".visible-pc").remove();
     }
     filereader.readAsDataURL(fileprop);
-  });
+  };
 
   function img_del(target){
     target.find("a.img_del").on('click',function(){
@@ -46,7 +52,20 @@ $(function() {
       }
       return false;
     });
-  }
+   }
+ });
+});
 
-});
-});
+
+
+
+
+
+
+
+
+
+
+
+
+
