@@ -16,114 +16,113 @@
               出品数
               .bold 0
 
-      .mypage-tab-container-notification-todo
-        %ul.mypage-tabs
-          %li.mypage-notification.active
-            %h3
-              .change お知らせ
-          %li.mypage-todo
-            %h3
-              .change やることリスト
-        .tab-content
-          %ul.tab-pane.mypage-notification-list.active
-            %li.mypage-item-not-found.bold 現在、お知らせはありません
-          %ul.tab-pane.mypage-todo-list
-            %li.mypage-item-not-found.bold 現在、やることリストはありません
+  .mypage-tab-container-notification-todo
+    %ul.tab.clearfix
+      %li.active やることリスト
+      %li お知らせ
+    .area
+      %ul.show
+        %li.image
+          = image_tag 'mercari_mypage_tab.png' ,size:"100x100" , class: "mercari-log16"
+        %li.text-1 現在、やることリストはありません
+      %ul
+        %li.image
+          = image_tag 'mercari_mypage_tab.png' ,size:"100x100" , class: "mercari-log16"
+        %li.text-1 現在、お知らせはありません
 
-      .adjustment
-      .mypage-tab-container-lower
-        %h2.mypage-tab-head 購入した商品
-        %ul.mypage-tabs-lower
-          %li.mypage-trade-lower.active
-            %h3
-              .change 取引中
-          %li.mypage-past
-            %h3
-              .change 過去の取引
-        .tab-content
-          %ul.tab-pane.mypage-trade-list.active
-            %li.mypage-item-not-found.bold 取引中の商品がありません
-          %ul.tab-pane.mypage-past-list
-            %li.mypage-item-not-found.bold 過去に取引した商品がありません
+  .mypage-tab-container-lower
+    %ul.tab-2.clearfix
+      %li.active 取引中
+      %li 過去の取引
 
-    .l-side-show
-      .maypage-nav
-        %ul.mypage-nav-list
-          %li.mypage-nav-list-each.active
-            = link_to "マイページ", "/users/:id", class: "mypage-nav-list-item active"
-            %i.icon-arrow-right
-          %li.mypage-nav-list-each
-            = link_to "お知らせ", "/", class: "mypage-nav-list-item"
-            %i.icon-arrow-right
-          %li.mypage-nav-list-each
-            = link_to "やることリスト", "/", class: "mypage-nav-list-item"
-            %i.icon-arrow-right
-          %li.mypage-nav-list-each
-            = link_to "いいね！一覧", "/", class: "mypage-nav-list-item"
-            %i.icon-arrow-right
-          %li.mypage-nav-list-each
-            = link_to "出品する", "/", class: "mypage-nav-list-item"
-            %i.icon-arrow-right
-          %li.mypage-nav-list-each
-            = link_to "出品した商品 - 出品中", "/", class: "mypage-nav-list-item"
-            %i.icon-arrow-right
-          %li.mypage-nav-list-each
-            = link_to "出品した商品 - 取引中", "/", class: "mypage-nav-list-item"
-            %i.icon-arrow-right
-          %li.mypage-nav-list-each
-            = link_to "出品した商品 - 売却済み", "/", class: "mypage-nav-list-item"
-            %i.icon-arrow-right
-          %li.mypage-nav-list-each
-            = link_to "購入した商品 - 取引中", "/", class: "mypage-nav-list-item"
-            %i.icon-arrow-right
-          %li.mypage-nav-list-each
-            = link_to "購入した商品 - 過去の取引", "/", class: "mypage-nav-list-item"
-            %i.icon-arrow-right
-          %li.mypage-nav-list-each
-            = link_to "ニュース一覧", "/", class: "mypage-nav-list-item"
-            %i.icon-arrow-right
-          %li.mypage-nav-list-each
-            = link_to "評価一覧", "/", class: "mypage-nav-list-item"
-            %i.icon-arrow-right
-          %li.mypage-nav-list-each
-            = link_to "ガイド", "/", class: "mypage-nav-list-item"
-            %i.icon-arrow-right
-          %li.mypage-nav-list-each
-            = link_to "お問い合わせ", "/", class: "mypage-nav-list-item"
-            %i.icon-arrow-right
+    .area-2
+      %ul.show
+        %li.image
+          = image_tag 'mercari_mypage_tab.png' ,size:"100x100" , class: "mercari-log16"
+        %li.text-2 取引中の商品がありません
+      %ul
+        %li.image
+          = image_tag 'mercari_mypage_tab.png' ,size:"100x100" , class: "mercari-log16"
+        %li.text-2 過去に取引した商品がありません
 
-        %h3.mypage-nav-head 売上・ポイント
-        %ul.mypage-nav-list
-          %li.mypage-nav-list-each
-            = link_to "売上・振込申請", "/", class: "mypage-nav-list-item"
-            %i.icon-arrow-right
-          %li.mypage-nav-list-each
-            = link_to "ポイント", "/", class: "mypage-nav-list-item"
-            %i.icon-arrow-right
+  .l-side-show
+    .maypage-nav
+      %ul.mypage-nav-list
+        %li.mypage-nav-list-each.active
+          = link_to "マイページ", "/users/:id", class: "mypage-nav-list-item active"
+          %i.icon-arrow-right
+        %li.mypage-nav-list-each
+          = link_to "お知らせ", "/", class: "mypage-nav-list-item"
+          %i.icon-arrow-right
+        %li.mypage-nav-list-each
+          = link_to "やることリスト", "/", class: "mypage-nav-list-item"
+          %i.icon-arrow-right
+        %li.mypage-nav-list-each
+          = link_to "いいね！一覧", "/", class: "mypage-nav-list-item"
+          %i.icon-arrow-right
+        %li.mypage-nav-list-each
+          = link_to "出品する", "/", class: "mypage-nav-list-item"
+          %i.icon-arrow-right
+        %li.mypage-nav-list-each
+          = link_to "出品した商品 - 出品中", "/", class: "mypage-nav-list-item"
+          %i.icon-arrow-right
+        %li.mypage-nav-list-each
+          = link_to "出品した商品 - 取引中", "/", class: "mypage-nav-list-item"
+          %i.icon-arrow-right
+        %li.mypage-nav-list-each
+          = link_to "出品した商品 - 売却済み", "/", class: "mypage-nav-list-item"
+          %i.icon-arrow-right
+        %li.mypage-nav-list-each
+          = link_to "購入した商品 - 取引中", "/", class: "mypage-nav-list-item"
+          %i.icon-arrow-right
+        %li.mypage-nav-list-each
+          = link_to "購入した商品 - 過去の取引", "/", class: "mypage-nav-list-item"
+          %i.icon-arrow-right
+        %li.mypage-nav-list-each
+          = link_to "ニュース一覧", "/", class: "mypage-nav-list-item"
+          %i.icon-arrow-right
+        %li.mypage-nav-list-each
+          = link_to "評価一覧", "/", class: "mypage-nav-list-item"
+          %i.icon-arrow-right
+        %li.mypage-nav-list-each
+          = link_to "ガイド", "/", class: "mypage-nav-list-item"
+          %i.icon-arrow-right
+        %li.mypage-nav-list-each
+          = link_to "お問い合わせ", "/", class: "mypage-nav-list-item"
+          %i.icon-arrow-right
 
-        %h3.mypage-nav-head 設定
-        %ul.mypage-nav-list
-          %li.mypage-nav-list-each
-            = link_to "プロフィール", "/users/:id/profile", class: "mypage-nav-list-item"
-            %i.icon-arrow-right
-          %li.mypage-nav-list-each
-            = link_to "住所変更", "/", class: "mypage-nav-list-item"
-            %i.icon-arrow-right
-          %li.mypage-nav-list-each
-            = link_to "支払い方法", "/users/:id/card", class: "mypage-nav-list-item"
-            %i.icon-arrow-right
-          %li.mypage-nav-list-each
-            = link_to "メール/パスワード", "/", class: "mypage-nav-list-item"
-            %i.icon-arrow-right
-          %li.mypage-nav-list-each
-            = link_to "本人情報", "/", class: "mypage-nav-list-item"
-            %i.icon-arrow-right
-          %li.mypage-nav-list-each
-            = link_to "電話番号の確認", "/", class: "mypage-nav-list-item"
-            %i.icon-arrow-right
-          %li.mypage-nav-list-each
-            = link_to "ログアウト", "/users/:id/logout", class: "mypage-nav-list-item"
-            %i.icon-arrow-right
+      %h3.mypage-nav-head 売上・ポイント
+      %ul.mypage-nav-list
+        %li.mypage-nav-list-each
+          = link_to "売上・振込申請", "/", class: "mypage-nav-list-item"
+          %i.icon-arrow-right
+        %li.mypage-nav-list-each
+          = link_to "ポイント", "/", class: "mypage-nav-list-item"
+          %i.icon-arrow-right
+
+      %h3.mypage-nav-head 設定
+      %ul.mypage-nav-list
+        %li.mypage-nav-list-each
+          = link_to "プロフィール", "/users/:id/profile", class: "mypage-nav-list-item"
+          %i.icon-arrow-right
+        %li.mypage-nav-list-each
+          = link_to "住所変更", "/", class: "mypage-nav-list-item"
+          %i.icon-arrow-right
+        %li.mypage-nav-list-each
+          = link_to "支払い方法", "/users/:id/card", class: "mypage-nav-list-item"
+          %i.icon-arrow-right
+        %li.mypage-nav-list-each
+          = link_to "メール/パスワード", "/", class: "mypage-nav-list-item"
+          %i.icon-arrow-right
+        %li.mypage-nav-list-each
+          = link_to "本人情報", "/", class: "mypage-nav-list-item"
+          %i.icon-arrow-right
+        %li.mypage-nav-list-each
+          = link_to "電話番号の確認", "/", class: "mypage-nav-list-item"
+          %i.icon-arrow-right
+        %li.mypage-nav-list-each
+          = link_to "ログアウト", "/users/:id/logout", class: "mypage-nav-list-item"
+          %i.icon-arrow-right
 
 .footer
 = render "shared/footer"
