@@ -2,9 +2,12 @@
   %section.owl-carousel.top-carousel.owl-loaded.owl-drag
     .owl-stage-outer
       .owl-stage{style: "left: -4796px; width: 8393px;"}
-        .owl-item.cloned{style: "width: 1199px;"}
-        .owl-item.cloned{style: "width: 1199px;"}
-        .owl-item.active{style: "width: 1199px;"}
+        .owl-item{style: "width: 1199px;"}
+          =image_tag('top-banner-kusanagi-xmas.jpg')
+        .owl-item{style: "width: 1199px;"}
+          =image_tag('top-banner-welcome.png')
+        .owl-item{style: "width: 1199px;"}
+          =image_tag('top-banner-new-register.png')
         %a{href: "https://mercari-special.jp/", class: "top-banner banner-kusanagi-san"}
         .owl-item{style: "width: 1199px;"}
         .owl-item{style: "width: 1199px;"}
@@ -25,7 +28,7 @@
           レディース 新着アイテム
       .items-box-content.clearfix
         %section.items-box
-          %a{href: "/mains/item_buy"}
+          %a{href: "/items/<%= #{@item_id} %>"}
             %figure.items-box-photo
               .image-box
                 %img.is-higher-width.lazyloaded{alt: "イヤリング", "data-src" => "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m96728472898_1.jpg?1543214866", src: "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m96728472898_1.jpg?1543214866"}/
