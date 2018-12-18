@@ -1,6 +1,10 @@
+.single-main {
+  height: 2200px;
+  background-color:  #F8F8F8;
+}
+
 .soto {
   background-color:  #F8F8F8;
-  height: 2100px;
 }
 .clearfix:after {
     content: '';
@@ -10,7 +14,7 @@
 
 .buy-item-container {
   margin-bottom: 40px;
-  height: 2100px;
+  height: 2200px;
   width: 700px;
   margin: 0 auto;
   background-color: #fff;
@@ -125,13 +129,54 @@
     font-size: 0;
     text-align: center;
     margin-right: 12px;
+    position: relative;
   }
 }
+
+.img_view {
+  padding: 0;
+  display: block;
+  float: left;
+}
+
+.img_preview {
+  width: 130px;
+  height: 130px;
+  position: absolute;
+  top: 40px;
+  left: 5px;
+}
+
+.img_del {
+  color: #fff;
+  font-size: 10px;
+  height: 10px;
+  display: inline-block;
+  position: absolute;
+  bottom: 10px;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.camera-icon {
+  font-size: 20px;
+  color: #ccc;
+  display: inline-block;
+  margin: 0 auto;
+  padding: 2px;
+  position: absolute;
+  top: 10px;
+  left: 60px;
+}
+
+
 .sell-upload-drop-box pre {
     position: absolute;
-    top: 50%;
     left: 16px;
     right: 16px;
+    top: 60px;
     text-align: center;
     font-size: 14px;
     line-height: 1.5;
@@ -160,17 +205,23 @@
 }
 
 /*ロールリスト*/
-.select-default {
-    position: relative;
-    z-index: 2;
-    height: 48px;
-    padding: 0 16px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    background: 0;
-    font-size: 16px;
-    line-height: 1.5;
-    cursor: pointer;
+.select-wrap {
+
+}
+
+// クラス名の指定がためidで対応
+#item_lcategories_id, #item_mcategories_id, #item_scategories_id, #item_size, #item_condition, #item_shipping_cost, #item_area, #item_shipping_date {
+  position: relative;
+  z-index: 2;
+  height: 48px;
+  width: 400px;
+  padding: 0 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  cursor: pointer;
 }
 
 .input-default {

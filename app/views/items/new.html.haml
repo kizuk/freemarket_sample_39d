@@ -9,174 +9,154 @@
   %body
     .header
     = render "shared/sub_header"
-    .soto
-    =form_for @item, url: items_path do |f|
-      %section.buy-item-container
-        #sell-container
-          .sell-container-inner
-            %h2.l-single-head 商品の情報を入力
-            %form.sell-form
-              .sell-upload-box
-                %h3.sell-upload-head
-                  出品画像
-                  %span.form-require 必須
-                %p 最大4枚までアップロードできます
-                .sell-dropbox-container.clearfix
-                  .sell-upload-items
-                    %ul
-                  .sell-upload-drop-box
-                    - 4.times do
-                      .sell-upload-drop-box__small_box
-                        = f.fields_for :images do |image|
-                          = f.label :image do
-                            = image.file_field :image_url, class: 'hidden'
-                            = image_tag "", height: "130", width: "130", class: "preview-images", name: "preview"
-                            %pre.visible-pc
-                              :preserve
+    .single-main
+      .soto
+      =form_for @item, url: items_path do |f|
+        %section.buy-item-container
+          #sell-container
+            .sell-container-inner
+              %h2.l-single-head 商品の情報を入力
+              %form.sell-form
+                .sell-upload-box
+                  %h3.sell-upload-head
+                    出品画像
+                    %span.form-require 必須
+                  %p 最大4枚までアップロードできます
+                  .sell-dropbox-container.clearfix
+                    .sell-upload-items
+                      %ul
+                    .sell-upload-drop-box
+                      - 4.times do
+                        .sell-upload-drop-box__small_box
+                          = f.fields_for :images do |image|
+                            .preview
+                              %ul
+                              = f.label :image do
+                                = fa_icon 'camera', class: 'camera-icon'
+                                = image.file_field :image_url, class: 'hidden'
+                              %pre.visible-pc
                                 クリックしてファイルをアップロード
-                / 商品名、説明
-              .sell-content
-                .form-group-group
-                  %label
+                  / 商品名、説明
+                .sell-content
+                  .form-group-group
                     =f.label :商品名
                     %span.form-require 必須
-                  %div
-                    =f.text_field :name, class: "input-default-header", placeholder: "商品名（必須 40文字まで)"
-                .form-group.setsumei
-                  %label
+                    %div
+                      =f.text_field :name, class: "input-default", placeholder: "商品名（必須 40文字まで)"
+                  .form-group.setsumei
                     =f.label :商品の説明
                     %span.form-require 必須
-                  %textarea-default
-                    =f.text_area :explain, placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: "5", class: "textarea-default"
-          / 詳細
-          .sell-content.clearfix
-            %h3.sell-sub-head 商品の詳細
-            .sell-form-box
-              .form-group
-                %label
-                  カテゴリー
-                  =f.label :lcategories_id, style: "display: none;"
-                  %span.form-require 必須
-                %div
+                    %textarea-default
+                      =f.text_area :explain, placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: "5", class: "textarea-default"
+            / 詳細
+            .sell-content.clearfix
+              %h3.sell-sub-head 商品の詳細
+              .sell-form-box
+                .form-group
+                  %label
+                    カテゴリー
+                    =f.label :lcategories_id, style: "display: none;"
+                    %span.form-require 必須
+                  %div
+                    .select-wrap
+                      =f.collection_select :lcategories_id, Lcategory.all, :id, :genre, :prompt => "---", class: "select-default"
+                      %i.icon-arrow-bottom
+                .form-group
+                  %label
+                    =f.label :mcategories_id, style: "display: none;"
+                  %div
+                    .select-wrap
+                      =f.collection_select :mcategories_id, Mcategory.all, :id, :genre, :prompt => "---", class: "select-default"
+                      %i.icon-arrow-bottom
+                .form-group
+                  %label
+                    =f.label :scategories_id, style: "display: none;"
+                  %div
+                    .select-wrap
+                      =f.collection_select :scategories_id, Scategory.all, :id, :genre, :prompt => "---", class: "select-default"
+                      %i.icon-arrow-bottom
+                .form-group
+                  %label
+                    サイズ
+                    =f.label :size, style: "display: none;"
+                    %span.form-require 必須
+                  %div
+                    .select-wrap
+                      =f.select :size, [["XXS以下", "XXS以下"], ["XS(SS)", "XS(SS)"], ["S", "S"], ["M", "M"], ["L", "L"], ["XL(LL)", "XL(LL)"], ["2XL(3L)", "2XL(3L)"], ["3XL(4L)", "3XL(4L)"], ["4XL(5L)以上", "4XL(5L)以上"], ["FREE SIZE", "FREE SIZE"]], :prompt => "---", class: "select-default"
+                      %i.icon-arrow-bottom
+                .form-group
+                  %label
+                    商品の状態
+                    %span.form-require 必須
                   .select-wrap
-                    =f.collection_select :lcategories_id, Lcategory.all, :id, :genre, :prompt => "---", class: "select-default"
+                    =f.select :condition, [["新品、未使用", "新品、未使用"], ["未使用品に近い", "未使用品に近い"], ["目立った傷や汚れなし", "目立った傷や汚れなし"],["やや傷や汚れあり", "やや傷や汚れあり" ], ["傷や汚れあり", "傷や汚れあり"], ["全体的に状態が悪い", "全体的に状態が悪い"]], :prompt => "---", class: "select-default"
                     %i.icon-arrow-bottom
-              .form-group
-                %label
-                  =f.label :mcategories_id, style: "display: none;"
-                %div
+            / 配送
+            .sell-content.clearfix
+              %h3.sell-sub-head 配送について
+              %a.form-question{:href => "/jp/help_center/article/68/", :target => "_blank"} ?
+              .sell-form-box
+                .form-group
+                  %label
+                    配送料の負担
+                    %span.form-require 必須
                   .select-wrap
-                    =f.collection_select :mcategories_id, Mcategory.all, :id, :genre, :prompt => "---", class: "select-default"
+                    =f.select :shipping_cost, [["送料込み（出品者負担）", "送料込み（出品者負担)"], ["着払い（購入者負担）","着払い（購入者負担）"]], :prompt => "---", class: "select-default"
                     %i.icon-arrow-bottom
-              .form-group
-                %label
-                  =f.label :scategories_id, style: "display: none;"
-                %div
+                .form-group
+                  %label
+                    発送元の地域
+                    %span.form-require 必須
                   .select-wrap
-                    =f.collection_select :scategories_id, Scategory.all, :id, :genre, :prompt => "---", class: "select-default"
+                    =f.select :area, [["北海道", "北海道"], ["青森県", "青森県"], ["岩手県", "岩手県"], ["宮城県", "宮城県"], ["秋田県", "秋田県"], ["山形県", "山形県"], ["福島県", "福島県"], ["茨城県", "茨城県"], ["栃木県", "栃木県"], ["群馬県", "群馬県"], ["埼玉県", "埼玉県"], ["千葉県", "千葉県"], ["東京都", "東京都"], ["神奈川県", "神奈川県"], ["新潟県", "新潟県"], ["富山県", "富山県"], ["石川県", "石川県"], ["福井県", "福井県"], ["山梨県", "山梨県"],["長野県", "長野県"], ["岐阜県", "岐阜県"], ["静岡県", "静岡県"], ["愛知県", "愛知県"], ["三重県", "三重県"], ["滋賀県", "滋賀県"], ["京都府", "京都府"], ["大阪府", "大阪府"], ["兵庫県", "兵庫県"], ["奈良県", "奈良県"], ["和歌山県", "和歌山県"], ["鳥取県", "鳥取県"], ["島根県", "島根県"],["岡山県", "岡山県"], ["広島県", "広島県"], ["徳島県", "徳島県"], ["香川県", "香川県"], ["愛媛県", "愛媛県"], ["高知県", "高知県"], ["福岡県", "福岡県"], ["佐賀県", "佐賀県"], ["長崎県", "長崎県"], ["熊本県", "熊本県"], ["大分県", "大分県"], ["宮城県", "宮城県"], ["鹿児島県", "鹿児島県"], ["沖縄県", "沖縄県"], ["未定", "未定"]],:prompt => "---", class: "select-default"
                     %i.icon-arrow-bottom
-              .form-group
-                %label
-                  サイズ
-                  =f.label :size, style: "display: none;"
-                  %span.form-require 必須
-                %div
+                .form-group
+                  %label
+                    発送までの日数
+                    %span.form-require 必須
                   .select-wrap
-                    =f.select :size, [["XXS以下", "XXS以下"], ["XS(SS)", "XS(SS)"], ["S", "S"], ["M", "M"], ["L", "L"], ["XL(LL)", "XL(LL)"], ["2XL(3L)", "2XL(3L)"], ["3XL(4L)", "3XL(4L)"], ["4XL(5L)以上", "4XL(5L)以上"], ["FREE SIZE", "FREE SIZE"]], :prompt => "---", class: "select-default"
+                    =f.select :shipping_date, [["1~2日で発送", "1~2日で発送"], ["2~3日で発送", "2~3日で発送"], ["4~7日で発送", "4~7日で発送"]],:prompt => "---", class: "select-default"
                     %i.icon-arrow-bottom
-              / .form-group
-              /   %label
-              /     ブランド
-              /     =f.label :size, style: "display: none;"
-              /     %span.form-require 任意
-              /   %div
-              /     .select-wrap
-              /       =f.text_field :brands_id, placeholder: "例）シャネル", class: "select-default"
-              /       %i.icon-arrow-bottom
-              .form-group
-                %label
-                  商品の状態
-                  %span.form-require 必須
-                .select-wrap
-                  =f.select :condition, [["新品、未使用", "新品、未使用"], ["未使用品に近い", "未使用品に近い"], ["目立った傷や汚れなし", "目立った傷や汚れなし"],["やや傷や汚れあり", "やや傷や汚れあり" ], ["傷や汚れあり", "傷や汚れあり"], ["全体的に状態が悪い", "全体的に状態が悪い"]], :prompt => "---", class: "select-default"
-                  %i.icon-arrow-bottom
-                / react-empty: 57
-          / 配送
-          .sell-content.clearfix
-            %h3.sell-sub-head 配送について
-            %a.form-question{:href => "/jp/help_center/article/68/", :target => "_blank"} ?
-            .sell-form-box
-              .form-group
-                %label
-                  / react-text: 64
-                  配送料の負担
-                  / /react-text
-                  %span.form-require 必須
-                .select-wrap
-                  =f.select :shipping_cost, [["送料込み（出品者負担）", "送料込み（出品者負担)"], ["着払い（購入者負担）","着払い（購入者負担）"]], :prompt => "---", class: "select-default"
-                  %i.icon-arrow-bottom
-                / react-empty: 70
-              .form-group
-                %label
-                  / react-text: 73
-                  発送元の地域
-                  / /react-text
-                  %span.form-require 必須
-                .select-wrap
-                  =f.select :area, [["北海道", "北海道"], ["青森県", "青森県"], ["岩手県", "岩手県"], ["宮城県", "宮城県"], ["秋田県", "秋田県"], ["山形県", "山形県"], ["福島県", "福島県"], ["茨城県", "茨城県"], ["栃木県", "栃木県"], ["群馬県", "群馬県"], ["埼玉県", "埼玉県"], ["千葉県", "千葉県"], ["東京都", "東京都"], ["神奈川県", "神奈川県"], ["新潟県", "新潟県"], ["富山県", "富山県"], ["石川県", "石川県"], ["福井県", "福井県"], ["山梨県", "山梨県"],["長野県", "長野県"], ["岐阜県", "岐阜県"], ["静岡県", "静岡県"], ["愛知県", "愛知県"], ["三重県", "三重県"], ["滋賀県", "滋賀県"], ["京都府", "京都府"], ["大阪府", "大阪府"], ["兵庫県", "兵庫県"], ["奈良県", "奈良県"], ["和歌山県", "和歌山県"], ["鳥取県", "鳥取県"], ["島根県", "島根県"],["岡山県", "岡山県"], ["広島県", "広島県"], ["徳島県", "徳島県"], ["香川県", "香川県"], ["愛媛県", "愛媛県"], ["高知県", "高知県"], ["福岡県", "福岡県"], ["佐賀県", "佐賀県"], ["長崎県", "長崎県"], ["熊本県", "熊本県"], ["大分県", "大分県"], ["宮城県", "宮城県"], ["鹿児島県", "鹿児島県"], ["沖縄県", "沖縄県"], ["未定", "未定"]],:prompt => "---", class: "select-default"
-                  %i.icon-arrow-bottom
-                / react-empty: 79
-              .form-group
-                %label
-                  / react-text: 82
-                  発送までの日数
-                  / /react-text
-                  %span.form-require 必須
-                .select-wrap
-                  =f.select :shipping_date, [["1~2日で発送", "1~2日で発送"], ["2~3日で発送", "2~3日で発送"], ["4~7日で発送", "4~7日で発送"]],:prompt => "---", class: "select-default"
-                  %i.icon-arrow-bottom
-                / react-empty: 88
-          / 販売価格
-          .sell-content.clearfix
-            %h3.sell-sub-head 販売価格(300〜9,999,999)
-            %a.form-question{:href => "/jp/help_center/article/64/", :target => "_blank"} ?
-            .sell-form-box
-              %ul.sell-price
-                %li.form-group
-                  .clearfix
-                    %label.l-left
-                      価格
-                      %span.form-require 必須
-                    .l-middle ¥
-                    .l-right.sell-price-input
-                      %div
-                        =f.text_field :price, placeholder: "例）300", id: "price-input-form", class: "input-default-header"
-                %li.clearfix
-                  .l-left
-                    / react-text: 192
-                    販売手数料 (10%)
-                    / /react-text
-                  .l-right -
-                %li.clearfix.bold
-                  .l-left 販売利益
-                  .l-right.calculation-result -
-          .sell-content.sell-btn-box
-            %div
-              %p
-                %a{:href => "", :target => "_blank"}> 禁止されている出品
-                、
-                %a{:href => "", :target => "_blank"}> 行為
-                を必ずご確認ください。
-              %p
-                またブランド品でシリアルナンバー等がある場合はご記載ください。
-                %a{:href => "", :target => "_blank"}> 偽ブランドの販売
-                は犯罪であり処罰される可能性があります。
-              %p
-                また、出品をもちまして
-                %a{:href => ""}> 加盟店規約
-                に同意したことになります。
-            %button.btn-default
-              =f.submit'出品する', class: "btn-red"
-            %a.btn-default.btn-gray もどる
-    .footer
-    = render "shared/sub_footer"
+            / 販売価格
+            .sell-content.clearfix
+              %h3.sell-sub-head 販売価格(300〜9,999,999)
+              %a.form-question{:href => "/jp/help_center/article/64/", :target => "_blank"} ?
+              .sell-form-box
+                %ul.sell-price
+                  %li.form-group
+                    .clearfix
+                      %label.l-left
+                        価格
+                        %span.form-require 必須
+                      .l-middle ¥
+                      .l-right.sell-price-input
+                        %div
+                          =f.text_field :price, placeholder: "例）300", id: "price-input-form", class: "input-default"
+                  %li.clearfix
+                    .l-left
+                      販売手数料 (10%)
+                    .l-right -
+                  %li.clearfix.bold
+                    .l-left 販売利益
+                    .l-right.calculation-result -
+            .sell-content.sell-btn-box
+              %div
+                %p
+                  %a{:href => "", :target => "_blank"}> 禁止されている出品
+                  、
+                  %a{:href => "", :target => "_blank"}> 行為
+                  を必ずご確認ください。
+                %p
+                  またブランド品でシリアルナンバー等がある場合はご記載ください。
+                  %a{:href => "", :target => "_blank"}> 偽ブランドの販売
+                  は犯罪であり処罰される可能性があります。
+                %p
+                  また、出品をもちまして
+                  %a{:href => ""}> 加盟店規約
+                  に同意したことになります。
+              %button.btn-default
+                =f.submit'出品する', class: "btn-red2"
+              .btn-default.btn-gray
+                =link_to "戻る", "/"
+      .footer
+      = render "shared/sub_footer"

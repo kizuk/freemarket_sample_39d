@@ -90,6 +90,6 @@ ActiveRecord::Schema.define(version: 2018_12_14_235055) do
   add_foreign_key "credit_cards", "users"
   add_foreign_key "images", "items"
   add_foreign_key "items", "users"
-  add_foreign_key "m_categories", "l_categories", column: "l_categories_id"
-  add_foreign_key "s_categories", "m_categories", column: "m_categories_id"
+  add_foreign_key "mcategories", "lcategories", column: "lcategories_id"
+  add_foreign_key "scategories", "mcategories", column: "mcategories_id"
 end
