@@ -11,44 +11,37 @@ $(function() {
   });
 
 // 選択した画像のプレビュー表示
-  $('input[type="file"]').on('change', function(){
-    var len = $(this).prop('files');
+  $('input[type="file"]').on('change', function(){ //ファイル選択ボタンを
+    var len = $(this).prop('files').length; //読み込んだファイルの数を変数lenに代入
+    console.log(len);
     for (var i = 0; i < len; i++) {
-     var file = $(this).target.files[i],
-         find_img = $(this).parent().find('img'),
-         filereader = new FileReader(),
-         preview = $(".preview ul");
+    console.log(i);
+      var file = $(this).prop('files')[i]; //ファイルを取得して変数fileに代入=
+      var filereader = new FileReader();
+      var imgHTML = '<li class="img_view"><img alt="" class="img_preview"><p><a href="#" class="img_del">画像を削除する</a></p></li>';
 
-    if(find_img.length){
-       find_img.nextAll().remove();
-       find_img.remove();
-    }
-
-    var img = '<li class="img_view"><img alt="" class="img_preview"><p><a href="#" class="img_del">画像を削除する</a></p></li>';
-
-    preview.append(img);
+    $(".preview ul").append(imgHTML);
 
     filereader.onload = function() {
-      preview.find('img').attr('src', filereader.result);
-      img_del(preview);
-      $(".visible-pc").remove();
+      $(".preview ul").find('img').attr('src', filereader.result); //ファイルが読み込まれた時にpreviewにappendしたimg要素に画像urlを設定する
+      $(".visible-pc").remove(); //クリックしてファイルをアップロードを消す
     }
-    filereader.readAsDataURL(fileprop);
+    filereader.readAsDataURL(file);
   };
 
-  function img_del(target){
-    target.find("a.img_del").on('click',function(){
-      var self = $(this),
-          parentBox = self.parent().parent().parent();
-      if(window.confirm('画像を削除します。\nよろしいですか？')){
-        setTimeout(function(){
-          parentBox.find('input[type=file]').val('');
-          parentBox.find('.img_view').remove();
-        } , 0);
-      }
-      return false;
-    });
-   }
+  // function img_del(target){
+  //   target.find("a.img_del").on('click',function(){
+  //     var self = $(this),
+  //         parentBox = self.parent().parent().parent();
+  //     if(window.confirm('画像を削除します。\nよろしいですか？')){
+  //       setTimeout(function(){
+  //         parentBox.find('input[type=file]').val('');
+  //         parentBox.find('.img_view').remove();
+  //       } , 0);
+  //     }
+  //     return false;
+  //   });
+  //  }
  });
 });
 
