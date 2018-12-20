@@ -24,18 +24,44 @@
                   %p 最大4枚までアップロードできます
                   .sell-dropbox-container.clearfix
                     .sell-upload-items
-                      %ul
+                      %ul.image_frame1
                     .sell-upload-drop-box
-                      - 4.times do
-                        .sell-upload-drop-box__small_box
-                          = f.fields_for :images do |image|
-                            .preview
-                              %ul
-                              = f.label :image do
-                                = fa_icon 'camera', class: 'camera-icon'
-                                = image.file_field :image_url, class: 'hidden'
-                              %pre.visible-pc
-                                クリックしてファイルをアップロード
+                      .sell-upload-drop-box__small_box
+                        = f.fields_for :images do |image|
+                          .preview
+                            %ul.image_frame1
+                            = f.label :image do
+                              = fa_icon 'camera', class: 'camera-icon'
+                              = image.file_field :image_url, class: 'hidden1'
+                            %pre.visible-pc1
+                              クリックしてファイルをアップロード
+                      .sell-upload-drop-box__small_box
+                        = f.fields_for :images do |image|
+                          .preview
+                            %ul.image_frame2
+                            = f.label :image do
+                              = fa_icon 'camera', class: 'camera-icon'
+                              = image.file_field :image_url, class: 'hidden2'
+                            %pre.visible-pc2
+                              クリックしてファイルをアップロード
+                      .sell-upload-drop-box__small_box
+                        = f.fields_for :images do |image|
+                          .preview
+                            %ul.image_frame3
+                            = f.label :image do
+                              = fa_icon 'camera', class: 'camera-icon'
+                              = image.file_field :image_url, class: 'hidden3'
+                            %pre.visible-pc3
+                              クリックしてファイルをアップロード
+                      .sell-upload-drop-box__small_box
+                        = f.fields_for :images do |image|
+                          .preview
+                            %ul.image_frame4
+                            = f.label :image do
+                              = fa_icon 'camera', class: 'camera-icon'
+                              = image.file_field :image_url, class: 'hidden4'
+                            %pre.visible-pc4
+                              クリックしてファイルをアップロード
                   / 商品名、説明
                 .sell-content
                   .form-group-group
