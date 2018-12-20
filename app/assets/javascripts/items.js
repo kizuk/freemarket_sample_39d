@@ -11,40 +11,63 @@ $(function() {
   });
 
 // 選択した画像のプレビュー表示
-  $('input[type="file"]').on('change', function(){ //ファイル選択ボタンを
-    var len = $(this).prop('files').length; //読み込んだファイルの数を変数lenに代入
-    console.log(len);
-    for (var i = 0; i < len; i++) {
-    console.log(i);
-      var file = $(this).prop('files')[i]; //ファイルを取得して変数fileに代入=
+  $('.hidden1').on('change', function(){
+      var file = $(this).prop('files')[0];
       var filereader = new FileReader();
-      var imgHTML = '<li class="img_view"><img alt="" class="img_preview"><p><a href="#" class="img_del">画像を削除する</a></p></li>';
+      var imgHTML = '<li class="img_view"><img alt="" class="img_preview"></li>';
 
-    $(".preview ul").append(imgHTML);
+    $(".image_frame1").append(imgHTML);
 
     filereader.onload = function() {
-      $(".preview ul").find('img').attr('src', filereader.result); //ファイルが読み込まれた時にpreviewにappendしたimg要素に画像urlを設定する
-      $(".visible-pc").remove(); //クリックしてファイルをアップロードを消す
+      $(".image_frame1").find('img').attr('src', filereader.result); //ファイルが読み込まれた時にpreviewにappendしたimg要素に画像urlを設定する
+      $(".visible-pc1").remove(); //クリックしてファイルをアップロードを消す
     }
     filereader.readAsDataURL(file);
-  };
+    console.log(file);
+  });
 
-  // function img_del(target){
-  //   target.find("a.img_del").on('click',function(){
-  //     var self = $(this),
-  //         parentBox = self.parent().parent().parent();
-  //     if(window.confirm('画像を削除します。\nよろしいですか？')){
-  //       setTimeout(function(){
-  //         parentBox.find('input[type=file]').val('');
-  //         parentBox.find('.img_view').remove();
-  //       } , 0);
-  //     }
-  //     return false;
-  //   });
-  //  }
- });
+    $('.hidden2').on('change', function(){
+      var file = $(this).prop('files')[0];
+      var filereader = new FileReader();
+      var imgHTML = '<li class="img_view"><img alt="" class="img_preview"></li>';
+
+    $(".image_frame2").append(imgHTML);
+
+    filereader.onload = function() {
+      $(".image_frame2").find('img').attr('src', filereader.result);
+      $(".visible-pc2").remove();
+    }
+    filereader.readAsDataURL(file);
+  });
+
+      $('.hidden3').on('change', function(){
+      var file = $(this).prop('files')[0];
+      var filereader = new FileReader();
+      var imgHTML = '<li class="img_view"><img alt="" class="img_preview"></li>';
+
+    $(".image_frame3").append(imgHTML);
+
+    filereader.onload = function() {
+      $(".image_frame3").find('img').attr('src', filereader.result);
+      $(".visible-pc3").remove();
+    }
+    filereader.readAsDataURL(file);
+  });
+
+      $('.hidden4').on('change', function(){
+      var file = $(this).prop('files')[0];
+      var filereader = new FileReader();
+      var imgHTML = '<li class="img_view"><img alt="" class="img_preview"></li>';
+
+    $(".image_frame4").append(imgHTML);
+
+    filereader.onload = function() {
+      $(".image_frame4").find('img').attr('src', filereader.result);
+      $(".visible-pc4").remove();
+    }
+    filereader.readAsDataURL(file);
+  });
 });
-
 
 
 

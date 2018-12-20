@@ -1,25 +1,20 @@
 %main.white{role: "main"}
   %section.owl-carousel.top-carousel.owl-loaded.owl-drag
-    .owl-stage-outer
-      .owl-stage{style: "left: -4796px; width: 8393px;"}
-        .owl-item{style: "width: 1199px;"}
-          =image_tag('top-banner-kusanagi-xmas.jpg')
-        .owl-item{style: "width: 1199px;"}
-          =image_tag('top-banner-welcome.png')
-        .owl-item{style: "width: 1199px;"}
-          =image_tag('top-banner-new-register.png')
-        %a{href: "https://mercari-special.jp/", class: "top-banner banner-kusanagi-san"}
-        .owl-item{style: "width: 1199px;"}
-        .owl-item{style: "width: 1199px;"}
-        .owl-item.cloned{style: "width: 1199px;"}
-        .owl-item.cloned{style:"width: 1199px;"}
-    .owl-nav
-      .owl-prev prev
-      .owl-next next
-    .owl-dots
-      .owl-dot
-      .owl-dot
-      .owl-dot.active
+    .swiper-container
+      .swiper-wrapper
+        .swiper-slide
+          = link_to do
+            = image_tag('top-banner-kusanagi-xmas.jpg', class: "banner-image")
+        .swiper-slide
+          = link_to do
+            = image_tag('top-banner-welcome.png', class: "banner-image")
+        .swiper-slide
+          = link_to do
+            = image_tag('top-banner-new-register.png', class: "banner-image")
+      .swiper-pagination
+      .swiper-button-prev
+      .swiper-button-next
+
   %section.pickup-container
     %h2.pickup-head ピックアップカテゴリー
     %section.items-box-container.clearfix
