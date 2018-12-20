@@ -14,24 +14,25 @@
           %p.buy-item-conf-item-name.bold ガスパッチョ フリース ブランケット
 
 
-          %form{action: "", method: "POST", novalidate: "novalidate"}
-            %p.buy-item-conf-price-ja.bold
-              ¥ 350
-              %span.item-shipping-fee.f14.bold 送料込み
 
-            %ul.buy-item-conf-accordion
-              %li.accordion-parent
-                .accordion-toggle
-                  ポイントはありません
-            %ul.buy-item-conf-price-table
-              %li.buy-item-conf-price-row.buy-item-conf-you-pay.bold
-                .buy-item-conf-price-cell.clear-fix
-                  .buy-item-conf-price-cell-left 支払い金額
-                  .buy-item-conf-price-cell-right
-                    %span{"data-buy-item-conf-pay" => "350"} ¥ 350
-            %ul.buy-item-conf-accordion
-              %li.accordion-parent
-                %button.btn-default.btn-red2.bold{:type => "submit"} 購入する
+          %p.buy-item-conf-price-ja.bold
+            ¥ 350
+            %span.item-shipping-fee.f14.bold 送料込み
+
+          %ul.buy-item-conf-accordion
+            %li.accordion-parent
+              .accordion-toggle
+                ポイントはありません
+          %ul.buy-item-conf-price-table
+            %li.buy-item-conf-price-row.buy-item-conf-you-pay.bold
+              .buy-item-conf-price-cell.clear-fix
+                .buy-item-conf-price-cell-left 支払い金額
+                .buy-item-conf-price-cell-right
+                  %span{"data-buy-item-conf-pay" => "350"} ¥ 350
+          %ul.buy-item-conf-accordion
+            %li.accordion-parent
+            = form_tag(action: :purchase, method: :post) do
+              %script{class: "payjp-button", type: "text/javascript", src: "https://checkout.pay.jp", "data-text": "購入する", "data-key": PAYJP_PUBLIC_KEY}
 
       %section.buy-item-conf-content.buy-item-conf-user-info
         .buy-item-conf-content-inner
