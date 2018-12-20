@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
+  protect_from_forgery except: :purchase
 
   def index
   end
@@ -21,10 +22,23 @@ class ItemsController < ApplicationController
   def show
   end
 
-  def confimation
+  def confirmation
   end
 
-  def buy
+  def purchase
+    require 'payjp'
+    Payjp.api_key = PAYJP_SECRET_KEY
+
+    Payjp::Charge.create(
+      :amount => 3500,
+      :card =>   params['payjp-token'],
+      :currency => 'jpy',
+    )
+    redirect_to action: 'buy', notice: '支払い完了しました'
+    rescue Payjp::CardError
+      respond_to do |format|
+        format.html { redirect_to item_path(@item), notice: 'カードエラーが発生しました' }
+    end
   end
 
   private
