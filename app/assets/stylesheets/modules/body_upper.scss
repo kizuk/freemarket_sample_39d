@@ -63,7 +63,6 @@ img { vertical-align: bottom;}
   position: relative;
   overflow: hidden;
   display: inline-block;
-  opacity: 0.4;
   float: left;
 }
 
@@ -72,6 +71,11 @@ img { vertical-align: bottom;}
   width: 100%;
   height: 100%;
   padding: 0;
+  opacity: 0.4;
+}
+
+.active_image {
+  opacity: 1!important;
 }
 
 .item-detail-table {
